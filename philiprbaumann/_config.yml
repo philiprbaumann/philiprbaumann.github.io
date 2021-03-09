@@ -34,7 +34,7 @@ plugins:
   - jekyll-seo-tag
 
 sass:
-  style: compact
+  style: compressed
   sass_dir: ./_sass
 
 collections:
