@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/fonts.scss",
+		"_sass/base.scss"
+	],
+	"sourcesContent": [
+		"@import \"fonts\";\n@import \"base\";\n\n// Your styles start here\nbody {\n\tbackground: $color-tan;\n\tcolor: $color-blue;\n\tfont-family: content;\n}\n\nhead {\n\tbackground: $color-tan;\n\tfont-family: title;\n}\n\n\n/* Add a black background color to the top navigation */\n.main-navigation {\n\tbackground-color: $color-tan;\n\toverflow: hidden;\n\theight: 15%;\n}\n\n/* Style the links inside the navigation bar */\n.main-navigation a {\n\tfloat: left;\n\tcolor: $color-teal;\n\ttext-align: center;\n\tpadding: 14px 16px;\n\ttext-decoration: none;\n\tfont-size: 17px;\n}\n\n/* Change the color of links on hover */\n.main-navigation a:hover {\n\tbackground-color: $color-brown;\n\tcolor: black;\n}\n\n/* Add a color to the active/current link */\n.main-navigation a.active {\n\tbackground-color: $color-brown;\n\tcolor: $color-blue;\n}",
+		"@font-face {\n\tfont-family: \"content\";\n\tsrc: url(\"../fonts/IBMPlexMono-Regular.ttf\");\n}\n\n@font-face {\n\tfont-family: \"title\";\n\tsrc: url(\"../fonts/OpenSans-Bold.ttf\");\n}",
+		"@charset \"utf-8\";\n\n$color-tan: #f4f1de; \n$color-orange: #e07a5f;\n$color-blue: #3d405b;\n$color-teal: #81b29a;\n$color-brown: #f2cc8f;\n\n// Color palette found here:\n// https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f"
+	],
+	"names": [],
+	"mappings": "ACAA,UAAU,CACT,WAAW,CAAE,SAAS,CACtB,GAAG,CAAE,uCAAuC,CAG7C,UAAU,CACT,WAAW,CAAE,OAAO,CACpB,GAAG,CAAE,iCAAiC,CDHvC,AAAA,IAAI,AAAC,CACJ,UAAU,CEHC,OAAO,CFIlB,KAAK,CEFO,OAAO,CFGnB,WAAW,CAAE,OAAO,CACpB,AAED,AAAA,IAAI,AAAC,CACJ,UAAU,CETC,OAAO,CFUlB,WAAW,CAAE,KAAK,CAClB,AAID,AAAA,gBAAgB,AAAC,CAChB,gBAAgB,CEhBL,OAAO,CFiBlB,QAAQ,CAAE,MAAM,CAChB,MAAM,CAAE,GAAG,CACX,AAGD,AAAA,gBAAgB,CAAC,CAAC,AAAC,CAClB,KAAK,CAAE,IAAI,CACX,KAAK,CErBO,OAAO,CFsBnB,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,SAAS,CAClB,eAAe,CAAE,IAAI,CACrB,SAAS,CAAE,IAAI,CACf,AAGD,AAAA,gBAAgB,CAAC,CAAC,CAAC,KAAK,AAAC,CACxB,gBAAgB,CE7BH,OAAO,CF8BpB,KAAK,CAAE,KAAK,CACZ,AAGD,AAAA,gBAAgB,CAAC,CAAC,AAAA,OAAO,AAAC,CACzB,gBAAgB,CEnCH,OAAO,CFoCpB,KAAK,CEtCO,OAAO,CFuCnB"
+}

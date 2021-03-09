@@ -1,0 +1,48 @@
+---
+# This is the Front Matter block
+---
+
+@import "fonts";
+@import "base";
+
+// Your styles start here
+body {
+	background: $color-tan;
+	color: $color-blue;
+	font-family: content;
+}
+
+head {
+	background: $color-tan;
+	font-family: title;
+}
+
+
+/* Add a black background color to the top navigation */
+.main-navigation {
+	background-color: $color-tan;
+	overflow: hidden;
+	height: 15%;
+}
+
+/* Style the links inside the navigation bar */
+.main-navigation a {
+	float: left;
+	color: $color-teal;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.main-navigation a:hover {
+	background-color: $color-brown;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+.main-navigation a.active {
+	background-color: $color-brown;
+	color: $color-blue;
+}
