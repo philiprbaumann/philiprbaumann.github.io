@@ -35,6 +35,7 @@ plugins:
 
 sass:
   style: compact
+  sass_dir: _sass
 
 collections:
   thoughts:
