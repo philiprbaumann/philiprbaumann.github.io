@@ -27,9 +27,14 @@ url: "http://philiprbaumann.com" # the base hostname & protocol for your site, e
 github_username:  philiprbaumann
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-assets
+  - jekyll-admin
+  - jekyll-seo-tag
+
+sass:
+  style: compact
 
 collections:
   thoughts:
