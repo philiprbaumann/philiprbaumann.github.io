@@ -1,6 +1,6 @@
-<header class="main-navigation">
-  <a class="active" href="/" class="main-navigation__item">Home</a>
-  <a href="/art" class="main-navigation__item">Art</a>
-  <a href="/resume" class="main-navigation__item">Resume</a>
-  <a href="/thoughts" class="main-navigation__item">Thoughts</a>
-</header>
+<nav class="main-navigation">
+  <a href="/" {% if page.url == '/' %} class="active"{% endif %} class="main-navigation__item">Home</a>
+  <a href="/art" {% if page.url == '/art/' %} class="active"{% endif %} class="main-navigation__item">Art</a>
+  <a href="/resume" {% if page.url == '/resume/' %} class="active"{% endif %} class="main-navigation__item">Resume</a>
+  <a href="/thoughts" {% if page.url == '/thoughts/' %} class="active"{% endif %} class="main-navigation__item">Thoughts</a>
+</nav>

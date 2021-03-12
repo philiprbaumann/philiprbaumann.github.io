@@ -1,12 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     {% include head.html %}
   </head>
   <body>
-    {% include main_navigation.html %}
-    {% include header.html %}
-    {{ content }}
-    {% include footer.html %}
+  	<div class="wrapper">
+		{% include main_navigation.html %}
+		{% include header.html %}
+		{{ content }}
+		{% include footer.html %}
+	</div>
   </body>
 </html>
+
+
+
+
+  <div class="box header">Header</div>
+  <div class="box sidebar">Sidebar</div>
+  <div class="box sidebar2">Sidebar 2</div>
+  <div class="box content">Content
+    <br /> More content than we had before so this column is now quite tall.</div>
+  <div class="box footer">Footer</div>
+</div>
+

@@ -4,12 +4,14 @@
 
 @import "fonts";
 @import "base";
+@import "grid";
 
 // Your styles start here
 body {
 	background: $color-tan;
 	color: $color-blue;
 	font-family: content;
+	margin: 40px;
 }
 
 head {
@@ -17,16 +19,19 @@ head {
 	font-family: title;
 }
 
+.main-navigation-home {
+	background-color: $color-tan;
+	overflow: hidden;
+}
 
-/* Add a black background color to the top navigation */
+/* Add a tan background color to the top navigation */
 .main-navigation {
 	background-color: $color-tan;
 	overflow: hidden;
-	height: 15%;
 }
 
 /* Style the links inside the navigation bar */
-.main-navigation a {
+.main-navigation a, a.inactive {
 	float: left;
 	color: $color-teal;
 	text-align: center;
