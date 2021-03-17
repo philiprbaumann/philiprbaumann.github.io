@@ -42,7 +42,9 @@ collections:
     output: true
   resume:
     output: true
-  art:
+  music:
+    output: true
+  wiki:
     output: true
 
 defaults:
@@ -58,9 +60,14 @@ defaults:
       layout: "resume"
   - scope:
       path: ""
-      type: "art"
+      type: "music"
     values:
-      layout: "art"
+      layout: "music"
+  - scope:
+      path: ""
+      type: "wiki"
+    values:
+      layout: "wiki"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

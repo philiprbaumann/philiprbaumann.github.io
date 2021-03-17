@@ -1,8 +1,10 @@
 ---
 layout: default
+sidebar: thoughts
 ---
-
-{% for thought in site.thoughts %}
-  <h2> - {{ thought.title }} - </h2>
-  <p>{{ thought.content | markdownify }}</p>
-{% endfor %}
+<div class="box content">
+	{% for thought in site.thoughts %}
+	  <h2> - {{ thought.title }} - </h2>
+	  <p>{{ thought.content | markdownify }}</p>
+	{% endfor %}
+</div>

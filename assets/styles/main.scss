@@ -5,49 +5,78 @@
 @import "fonts";
 @import "base";
 @import "grid";
+@import "sidebar";
 
 // Your styles start here
 body {
-	background: $color-tan;
+	background: $color-white;
 	color: $color-blue;
 	font-family: content;
-	margin: 40px;
+	margin: 0;
 }
 
 head {
-	background: $color-tan;
+	background: $color-white;
 	font-family: title;
 }
 
 .main-navigation-home {
-	background-color: $color-tan;
-	overflow: hidden;
+	background-color: $color-white;
 }
 
-/* Add a tan background color to the top navigation */
 .main-navigation {
-	background-color: $color-tan;
+	background-color: $color-white;
 	overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
-.main-navigation a, a.inactive {
+.main-navigation__item {
 	float: left;
-	color: $color-teal;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
+    width: 10%;
+    margin: 0;
+    text-align:center;
+    padding: 15px 15px;
 	font-size: 17px;
+	position: relative;
+  	overflow: hidden;
+  	text-decoration: underline;
 }
 
-/* Change the color of links on hover */
+.main-navigation a, a.inactive {
+	color: $color-teal;
+}
+
 .main-navigation a:hover {
-	background-color: $color-brown;
-	color: black;
+	background-color: $color-aqua;
+	color: $color-navy;
 }
 
-/* Add a color to the active/current link */
 .main-navigation a.active {
-	background-color: $color-brown;
-	color: $color-blue;
+	background-color: $color-aqua;
+	color: $color-white;
+}
+
+.footer-ul, .footer-li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-ul {
+    width: 100%;
+}
+
+.footer-li {
+    float: left;
+    width: 33%;  
+    text-align:center;
+}
+
+ /* unvisited link */
+.footer-link a:link {
+  color: $color-blue;
+}
+
+/* visited link */
+.footer-link a:visited {
+  color: $color-navy;
 }

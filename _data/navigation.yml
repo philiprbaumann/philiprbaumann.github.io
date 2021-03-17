@@ -1,0 +1,19 @@
+title: A few more of my thoughts
+
+seeds:
+  - title: thoughts
+    subfolderitems:
+      - page: My First Seed
+        url: /thoughts/mar-20-2021.html
+  - title: music
+    subfolderitems:
+      - page: temp
+        url: /thoughts/mar-20-2021.html
+  - title: resume
+    subfolderitems:
+      - page: temp
+        url: /thoughts/mar-20-2021.html
+  - title: wiki
+    subfolderitems:
+      - page: temp
+        url: /thoughts/mar-20-2021.html
