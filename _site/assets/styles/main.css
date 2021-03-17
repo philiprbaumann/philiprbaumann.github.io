@@ -1,3 +1,0 @@
-@font-face{font-family:"content";src:url("../fonts/IBMPlexMono-Regular.ttf")}@font-face{font-family:"title";src:url("../fonts/OpenSans-Bold.ttf")}body{background:#f4f1de;color:#3d405b;font-family:content}head{background:#f4f1de;font-family:title}.main-navigation{background-color:#f4f1de;overflow:hidden;height:15%}.main-navigation a{float:left;color:#81b29a;text-align:center;padding:14px 16px;text-decoration:none;font-size:17px}.main-navigation a:hover{background-color:#f2cc8f;color:black}.main-navigation a.active{background-color:#f2cc8f;color:#3d405b}
-
-/*# sourceMappingURL=main.css.map */
