@@ -33,10 +33,12 @@ plugins:
   - jekyll-admin
   - jekyll-seo-tag
 
+# SASS settings
 sass:
   style: compressed
   sass_dir: _sass
 
+# Collections
 collections:
   thoughts:
     output: true

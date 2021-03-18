@@ -2,3 +2,9 @@
 layout: default
 sidebar: wiki
 ---
+<div style="text-align: center;" class="box content">
+	{% for page in site.wiki %}
+	  <h2> - {{ page.title }} - </h2>
+	  <p>{{ page.content | markdownify }}</p>
+	{% endfor %}
+</div>

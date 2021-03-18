@@ -73,7 +73,7 @@
 .menu,
 .menu a,
 .menu a:visited {
-  color: $color-blood;
+  color: $color-white;
   text-decoration: none!important;
 	position: relative;
 }
@@ -94,7 +94,7 @@
 }
 
 .menu-dropdown li .icon {
-	color: $color-blood;
+	color: $color-white;
 }
 
 .menu-dropdown li:hover .icon {
@@ -206,7 +206,7 @@ input#menu[type="checkbox"] {
   font-family: contentbold;
   text-transform: uppercase;
   font-weight: 800;
-  color: $color-blood;
+  color: $color-navy;
   font-size: 21px;
   padding: 10px;
 }
@@ -216,11 +216,11 @@ input#menu[type="checkbox"] {
 }
 
 .menu a.logotype:hover {
-  color: #777;
+  color: $color-white;
 }
 
 .sub-menu-dropdown {
-	background-color: $color-gold;
+	background-color: $color-aqua;
 }
 
 .menu:hover {

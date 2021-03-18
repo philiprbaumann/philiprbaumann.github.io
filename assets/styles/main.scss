@@ -42,7 +42,7 @@ head {
 }
 
 .main-navigation a, a.inactive {
-	color: $color-teal;
+	color: $color-navy;
 }
 
 .main-navigation a:hover {
@@ -53,6 +53,20 @@ head {
 .main-navigation a.active {
 	background-color: $color-aqua;
 	color: $color-white;
+}
+
+.main-card {
+	float: center;
+	text-align: left;
+	padding: 0px 15px 15px 15px;
+}
+
+.mid-card {
+	text-align: center;
+}
+
+.sub-card {
+	text-align: right;
 }
 
 .footer-ul, .footer-li {
@@ -72,11 +86,11 @@ head {
 }
 
  /* unvisited link */
-.footer-link a:link {
-  color: $color-blue;
+#footer-link a:link {
+  color: $color-tan;
 }
 
 /* visited link */
-.footer-link a:visited {
+#footer-link a:visited {
   color: $color-navy;
 }

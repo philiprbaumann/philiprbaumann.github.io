@@ -2,18 +2,22 @@ title: A few more of my thoughts
 
 seeds:
   - title: thoughts
+    icon: cloud
     subfolderitems:
       - page: My First Seed
-        url: /thoughts/mar-20-2021.html
+        url: /thoughts/feb-20-2021.html
   - title: music
+    icon: headphones
     subfolderitems:
       - page: temp
-        url: /thoughts/mar-20-2021.html
+        url: /thoughts/feb-20-2021.html
   - title: resume
+    icon: vcard
     subfolderitems:
       - page: temp
-        url: /thoughts/mar-20-2021.html
+        url: /thoughts/feb-20-2021.html
   - title: wiki
+    icon: wikipedia-w 
     subfolderitems:
-      - page: temp
-        url: /thoughts/mar-20-2021.html
+      - page: Danny Boy
+        url: /wiki/Danny-Boy.html
