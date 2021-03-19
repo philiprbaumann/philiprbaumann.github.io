@@ -20,3 +20,6 @@ seeds:
         url: /playlists
       - page: recipes
         url: /recipes
+      - page: movies
+        url: /movies
+

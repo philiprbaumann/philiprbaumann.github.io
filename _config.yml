@@ -52,6 +52,8 @@ collections:
     output: true
   playlists:
     output: true
+  movies:
+    output: true
 
 defaults:
   - scope:
@@ -84,6 +86,11 @@ defaults:
       type: "recipes"
     values:
       layout: "recipes"
+  - scope:
+      path: ""
+      type: "movies"
+    values:
+      layout: "movies"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
