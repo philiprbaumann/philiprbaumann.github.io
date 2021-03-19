@@ -1,10 +1,22 @@
 ---
-layout: default
+layout: wiki-link
 sidebar: wiki
 ---
-<div style="text-align: center;" class="box content">
-	{% for page in site.wiki %}
-	  <h2> - {{ page.title }} - </h2>
-	  <p>{{ page.content | markdownify }}</p>
-	{% endfor %}
+<div style="text-align: left;" class="box content">
+	<h1>WIKI</h1>
+	<ul id="wiki-ul">
+		{% for page in site.wiki %}
+		<li id="wiki-li">
+			<a id="wiki-link" href="/{{ page.title }}">
+				<div class="content">
+					<i class="fa fa-{{ page.icon }}"></i>
+					<div>
+						<h1>/{{ page.title }}/</h1>
+						<h2>{{ page.description }}</h2>
+					</div>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
 </div>

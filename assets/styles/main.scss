@@ -6,6 +6,7 @@
 @import "base";
 @import "grid";
 @import "sidebar";
+@import "wiki-list";
 
 // Your styles start here
 body {
@@ -20,6 +21,27 @@ head {
 	font-family: title;
 }
 
+p {
+	color: $color-navy;
+}
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+	text-align: right;
+}
+
+hr {
+	height: 5px;
+	width: 100%;
+	color: $color-blood;
+	background-color: $color-blood;
+	opacity: .75;
+	border: none;
+}
+
 .main-navigation-home {
 	background-color: $color-white;
 }
@@ -27,13 +49,16 @@ head {
 .main-navigation {
 	background-color: $color-white;
 	overflow: hidden;
+	align-content: center;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 .main-navigation__item {
-	float: left;
-    width: 10%;
+	display: inline-flex;
+    justify-content: space-between;
     margin: 0;
-    text-align:center;
+    text-align: center;
     padding: 15px 15px;
 	font-size: 17px;
 	position: relative;
@@ -85,12 +110,10 @@ head {
     text-align:center;
 }
 
- /* unvisited link */
-#footer-link a:link {
-  color: $color-tan;
+.footer-li a:link{
+  color: $color-aqua;
 }
 
-/* visited link */
-#footer-link a:visited {
+.footer-li a:visited{
   color: $color-navy;
 }

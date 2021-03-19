@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="box content">
+	<h1>Recipes</h1>
+	<hr>
+	<br>
+	{% for recipe in site.recipes %}
+	  <h2> - {{ recipe.title }} - </h2>
+	  <p>{{ recipe.content | markdownify }}</p>
+	  	<hr width="5%" color=$color-blood>  
+	{% endfor %}
+</div>

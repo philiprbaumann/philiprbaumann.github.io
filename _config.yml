@@ -48,6 +48,10 @@ collections:
     output: true
   wiki:
     output: true
+  recipes:
+    output: true
+  playlists:
+    output: true
 
 defaults:
   - scope:
@@ -70,6 +74,16 @@ defaults:
       type: "wiki"
     values:
       layout: "wiki"
+  - scope:
+      path: ""
+      type: "playlists"
+    values:
+      layout: "playlists"
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "recipes"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% include head.html %}
+</head>
+<body>
+	<div class="wrapper">	
+		{% include main_navigation.html %}
+		{% include header.html %}
+		{% include sidebar.html %}
+		<div class="box content">
+			{{ content }}
+		</div>
+		{% include jquery.html %}
+	</div>
+</body>
+{% include footer.html %} 
+</html>

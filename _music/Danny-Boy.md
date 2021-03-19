@@ -1,7 +1,9 @@
 ---
-layout: wiki
-title:  "St. Patrick's Day - March 20, 2021"
+layout: music
+title:  "Danny Boy"
 ---
+
+### St. Patrick's Day - March 20, 2021
 
 Oh, Danny boy, the pipes, the pipes are calling
 
@@ -35,5 +37,3 @@ And all my grave will warmer, sweeter be,
 For you will bend and tell me that you love me,
 
 And I shall sleep in peace until you come to me! 
-
- =  ERIN GO BRAGH  =

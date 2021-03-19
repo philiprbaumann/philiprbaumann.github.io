@@ -3,21 +3,20 @@ title: A few more of my thoughts
 seeds:
   - title: thoughts
     icon: cloud
+    nested: true
     subfolderitems:
       - page: My First Seed
         url: /thoughts/feb-20-2021.html
-  - title: music
-    icon: headphones
-    subfolderitems:
-      - page: temp
-        url: /thoughts/feb-20-2021.html
   - title: resume
     icon: vcard
-    subfolderitems:
-      - page: temp
-        url: /thoughts/feb-20-2021.html
+    nested: false
   - title: wiki
     icon: wikipedia-w 
+    nested: true
     subfolderitems:
-      - page: Danny Boy
-        url: /wiki/Danny-Boy.html
+      - page: music
+        url: /music
+      - page: playlists
+        url: /playlists
+      - page: recipes
+        url: /recipes
