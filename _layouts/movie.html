@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="box content">
+	<h1>Movies</h1>
+	<hr>
+	<br>
+	{% for movie in site.movies %}
+	  <h2> - {{ movie.title }} - </h2>
+	  <p>{{ movie.content | markdownify }}</p>
+	  	<hr width="5%" color=$color-blood>  
+	{% endfor %}
+</div>

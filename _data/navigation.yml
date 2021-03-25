@@ -7,6 +7,8 @@ seeds:
     subfolderitems:
       - page: My First Seed
         url: /thoughts/feb-20-2021.html
+      - page: Invictus
+        url: /thoughts/mar-24-2021.html
   - title: resume
     icon: vcard
     nested: false

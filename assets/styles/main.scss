@@ -25,16 +25,45 @@ p {
 	color: $color-navy;
 }
 
-h1 {
+.left {
+	text-align: left;
+}
+
+.middle {
 	text-align: center;
 }
 
-h3 {
+.right {
 	text-align: right;
 }
 
+.title {
+	font-family: title;
+}
+
+.logo {
+	max-width: 100%;
+  	height: auto;
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 150px;
+}
+
+.text-light {
+	font-family: contentlight;
+}
+
+.text-regular {
+	font-family: content;
+}
+
+.text-bold {
+	font-family: contentbold;
+}
+
 hr {
-	height: 5px;
+	height: 2px;
 	width: 100%;
 	color: $color-blood;
 	background-color: $color-blood;
@@ -96,18 +125,27 @@ hr {
 
 .footer-ul, .footer-li {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .footer-ul {
-    width: 100%;
+    background-color: $color-white;
+	overflow: hidden;
+	align-content: center;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 .footer-li {
-    float: left;
-    width: 33%;  
-    text-align:center;
+	display: inline-flex;
+    justify-content: space-between;
+    margin: 0;
+    text-align: center;
+    padding: 15px 15px;
+	font-size: 9px;
+	font-family: contentlight;
+	position: relative;
+  	overflow: hidden;
+  	text-decoration: underline;
 }
 
 .footer-li a:link{

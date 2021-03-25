@@ -20,28 +20,37 @@
 }
 
 .wrapper {
+  .sidebar {
+    display: none;
+  }
   display: grid;
   grid-gap: 1em;
   grid-template-areas:
   "header"
+  "content"
   "content"
   "footer"
 }
 
 @media only screen and (min-width: 500px)  {
   .wrapper {
-
+    .sidebar {
+      display: inherit;
+    }
     grid-template-columns: 5% auto;
     grid-template-areas:
     "sidebar   header"
     "sidebar  content"
     "sidebar  content"
-    "footer   footer";
+    "sidebar   footer";
   }
 }
 
 @media only screen and (min-width: 600px)   {
   .wrapper {
+    .sidebar {
+      display: inherit;
+    }
     grid-gap: 0px;
     grid-template-columns: 250px auto 15%;
     grid-template-areas:
@@ -68,7 +77,8 @@
 }
 
 .footer {
-  position: fixed;
+  display: flex;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
@@ -76,8 +86,6 @@
   padding: 10px;
   left: 0px;
   right: 0px;
-  text-align: center;
-  font-size: 60%;
 }
 
 .content {
