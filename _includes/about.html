@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<div style="padding-top:50px;" class="box content">
-	<div class="main-card">
-		<h1 class="middle">Philip Baumann</h1>
-		<h2 class="middle text-light">(he/him)</h2>
-		<h2 class="middle text-regular">Developer, musician, nature enthusiast, and space fanatic.</h2>
-	</div>
+<div style="padding-top:10px;" class="box content">
 	{% include logo.html %}
-	<div class="mid-card middle">
+	<h2 class="middle text-light">my name is</h2>
+	<hr style="width: 50%">
+	<h1 class="middle title navy">Philip Baumann</h1>
+	<hr style="width: 50%">
+	<h2 class="middle text-light navy">(he/him)</h2>
+	<hr>
+	<h2 class="middle text-regular">Developer, musician, nature enthusiast, and space fanatic.</h2>
+	<hr style="width: 75%">
+
+	<div class="about-wrapper">
+		{% include profile.html %}
+		<div class="navy">
+			{% include this-website.html %}
+		</div>
+	</div>
+	<div class="middle">
 		<p>This is a personal project to create a digital garden of <strong>stuff</strong> I like.</p>
 	</div>
-	<div class="sub-card">
-		<p class="text-bold middle">Welcome!</p>
-	</div>
-	
 </div>
 

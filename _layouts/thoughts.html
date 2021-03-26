@@ -4,7 +4,8 @@ sidebar: thoughts
 ---
 <div class="box content">
 	{% for thought in site.thoughts %}
-	  <h2> - {{ thought.title }} - </h2>
+	  <h2 class="middle navy">{{ thought.title }}</h2>
 	  <p>{{ thought.content | markdownify }}</p>
+	  <hr>
 	{% endfor %}
 </div>

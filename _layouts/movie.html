@@ -6,8 +6,8 @@ layout: default
 	<hr>
 	<br>
 	{% for movie in site.movies %}
-	  <h2> - {{ movie.title }} - </h2>
+	  <h2>{{ movie.title }}</h2>
 	  <p>{{ movie.content | markdownify }}</p>
-	  	<hr width="5%" color=$color-blood>  
+	  	<hr>  
 	{% endfor %}
 </div>

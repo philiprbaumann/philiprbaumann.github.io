@@ -3,12 +3,12 @@ layout: default
 sidebar: music
 ---
 <div class="box content">
-	<h1>Music</h1>
+	<h1 class="text-bold">Music</h1>
 	<hr>
 	<br>
 	{% for music in site.music %}
-	  <h2> - {{ music.title }} - </h2>
+	  <h2 class="middle text-bold navy">{{ music.title }}</h2>
 	  <p>{{ music.content | markdownify }}</p>
-	  	<hr width="5%" color=$color-blood>  
+	  <hr>  
 	{% endfor %}
 </div>

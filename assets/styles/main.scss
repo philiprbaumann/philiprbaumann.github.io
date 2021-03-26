@@ -5,6 +5,7 @@
 @import "fonts";
 @import "base";
 @import "grid";
+@import "about-grid";
 @import "sidebar";
 @import "wiki-list";
 
@@ -23,6 +24,13 @@ head {
 
 p {
 	color: $color-navy;
+}
+
+.outer-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .left {
@@ -50,25 +58,12 @@ p {
   	width: 150px;
 }
 
-.text-light {
-	font-family: contentlight;
-}
-
-.text-regular {
-	font-family: content;
-}
-
-.text-bold {
-	font-family: contentbold;
-}
-
 hr {
 	height: 2px;
 	width: 100%;
-	color: $color-blood;
-	background-color: $color-blood;
 	opacity: .75;
 	border: none;
+	border-top: 2px dashed $color-blood;
 }
 
 .main-navigation-home {
@@ -111,16 +106,7 @@ hr {
 
 .main-card {
 	float: center;
-	text-align: left;
 	padding: 0px 15px 15px 15px;
-}
-
-.mid-card {
-	text-align: center;
-}
-
-.sub-card {
-	text-align: right;
 }
 
 .footer-ul, .footer-li {

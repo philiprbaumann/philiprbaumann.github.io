@@ -3,7 +3,7 @@ layout: recipe
 title:  Vegetarian Quesadillas
 ---
 
-My sister found this recipe on Pinterest and I'm a huge fan. It's pretty comparable to a normal quesadilla, except its made with sweet potatoes that adds a nice sweetness to a general spicy and savory dish.
+My sister found this recipe on Pinterest and I'm a huge fan. It's pretty comparable to a normal quesadilla, except its made with sweet potatoes that adds a nice sweetness to a generally spicy and savory dish.
 
 Ingredients - Makes 4/6 Quesadillas
  - 1 large sweet potato
@@ -17,7 +17,7 @@ Ingredients - Makes 4/6 Quesadillas
  - frozen corn or corn salsa
  - cheese
  - flour (I prefer whole wheat) tortillas
- - I also like some sour cream for topping.
+ - I also like some sour cream for topping
 
 Here are the steps to make them:
 

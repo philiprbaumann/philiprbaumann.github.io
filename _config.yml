@@ -54,6 +54,8 @@ collections:
     output: true
   movies:
     output: true
+  code:
+    output: true
 
 defaults:
   - scope:
@@ -91,6 +93,11 @@ defaults:
       type: "movies"
     values:
       layout: "movies"
+  - scope:
+      path: ""
+      type: "code"
+    values:
+      layout: "code"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

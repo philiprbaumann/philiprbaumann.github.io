@@ -24,4 +24,6 @@ seeds:
         url: /recipes
       - page: movies
         url: /movies
+      - page: code
+        url: /code
 

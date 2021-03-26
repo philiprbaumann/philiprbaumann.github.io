@@ -1,6 +1,6 @@
 ---
 layout: music
-title:  "Danny Boy"
+title:  Danny Boy
 ---
 
 ### St. Patrick's Day - March 20, 2021

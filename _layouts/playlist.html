@@ -2,11 +2,11 @@
 layout: default
 ---
 <div class="box content">
-	<h1>Recipes</h1>
+	<h1>Playlists</h1>
 	<hr>
 	<br>
-	{% for recipe in site.recipes %}
-	  <h2>{{ recipe.title }}</h2>
+	{% for playlist in site.playlists %}
+	  <h2> - {{ recipe.playlist }} - </h2>
 	  <p>{{ recipe.content | markdownify }}</p>
 	  <hr>  
 	{% endfor %}
