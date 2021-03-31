@@ -6,8 +6,10 @@ layout: default
 	<hr>
 	<br>
 	{% for movie in site.movies %}
-	  <h2>{{ movie.title }}</h2>
+	<div>
+		<h2 class="left">{{ movie.title }}</h2><h2 class="right">{{ movie.rating }}</h2>
+	</div>
 	  <p>{{ movie.content | markdownify }}</p>
-	  	<hr>  
+	  <hr>  
 	{% endfor %}
 </div>
