@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<div style="padding-top:10px;" class="box content">
-	<div style="padding-top: 100px; padding-bottom: 100px;" class="about-wrapper">
-		{% include profile.html %}
-		<div class="navy border">
+<div style="grid-area: content;" class="box">
+	<div class="about-wrapper">
+		<div class="about-col middle outer-center">
+			{% include profile.html %}
+		</div>
+		<div class="navy border about-col">
 			<div style="padding: 10px;">
 				{% include logo.html %}
 				<hr>

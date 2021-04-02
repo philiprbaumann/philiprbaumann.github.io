@@ -1,17 +1,42 @@
-.sidebar {
-  grid-area: sidebar;
-}
-
 .content {
   grid-area: content;
+  // width: 70vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .header {
   grid-area: header;
+  position: relative;
+  top: 0;
+  width: 70vw;
+  height: 2.5rem;
+  left: 0px;
+  right: 0px;
+  padding: 25px 0 25px 0;
+}
+
+.name {
+  grid-area: name;
+  font-family: bigname;
+  letter-spacing: 6px;
+  color: $color-navy;
+  font-size: 32px;
+  text-align: center;
+  padding: 5px 0px 0px 30px;
+  width: 30vw;
+  overflow: visible;
 }
 
 .footer {
   grid-area: footer;
+  position: relative;
+  bottom: 0;
+  width: 90vw;
+  height: 2.5rem;
+  padding: 10px;
+  left: 0px;
+  right: 0px;
 }
 
 .wrapper {
@@ -20,8 +45,12 @@
 }
 
 .wrapper {
-  .sidebar {
-    display: none;
+  .name {
+      display: none;
+      width: 0vw;
+  }
+  .main-navigation {
+    width: 100vw;
   }
   display: grid;
   grid-gap: 1em;
@@ -34,57 +63,42 @@
 
 @media only screen and (min-width: 500px)  {
   .wrapper {
-    .sidebar {
-      display: inherit;
+    .name {
+      display: inline-flex;
+      width: 30vw;
+    }
+    .main-navigation {
+      width: 70vw;
     }
     grid-template-columns: 5% auto;
     grid-template-areas:
-    "sidebar   header"
-    "sidebar  content"
-    "sidebar  content"
-    "sidebar   footer";
+    "name   header"
+    "content  content"
+    "content  content"
+    "footer   footer";
   }
 }
 
 @media only screen and (min-width: 600px)   {
   .wrapper {
-    .sidebar {
-      display: inherit;
+    .name {
+      display: inline-flex;
+      width: 30vw;
+    }
+    .main-navigation {
+      width: 70vw;
     }
     grid-gap: 0px;
-    grid-template-columns: 250px auto 15%;
+    grid-template-columns: auto;
     grid-template-areas:
-    "sidebar  header  header"
-    "sidebar content content"
-    "sidebar  footer  footer";
-    max-width: 90%;
+    "name header header header header"
+    "content content content content content "
+    "footer footer footer footer footer";
   }
 }
 
 .box {
   color: $color-aqua;
-}
-
-.header {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 2.5rem;
-  margin: auto;
-  padding: 10px;
-  left: 0px;
-  right: 0px;
-}
-
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  margin: auto;
-  padding: 10px;
-  left: 0px;
-  right: 0px;
 }
 
 .content {
