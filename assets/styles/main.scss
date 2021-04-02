@@ -6,7 +6,6 @@
 @import "base";
 @import "grid";
 @import "about-grid";
-@import "sidebar";
 @import "wiki-list";
 
 // Your styles start here
@@ -24,6 +23,8 @@ head {
 
 p {
 	color: $color-navy;
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 .outer-center {
@@ -80,12 +81,12 @@ hr {
 	overflow: hidden;
 	align-content: center;
 	display: inline-flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .main-navigation__item {
 	display: inline-flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
     text-align: center;
     padding: 15px 15px;
@@ -123,12 +124,12 @@ hr {
 	overflow: hidden;
 	align-content: center;
 	display: inline-flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .footer-li {
 	display: inline-flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
     text-align: center;
     padding: 15px 15px;

@@ -18,6 +18,11 @@
 	src: url("../fonts/OpenSans-Bold.ttf");
 }
 
+@font-face {
+	font-family: "bigname";
+	src: url("../fonts/RobotoSlab-Bold.ttf");
+}
+
 .text-light {
 	font-family: contentlight;
 }
@@ -32,4 +37,8 @@
 
 .title {
 	font-family: title;
+}
+
+.big-name {
+	font-family: bigname;
 }
