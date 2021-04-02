@@ -3,12 +3,10 @@
 	height: 100%;
 	list-style: none;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	flex-wrap: wrap;
 	#wiki-li {
-		width: 370px;
-		margin: 7px 0;
+		width: 300px;
+		margin: 7px 10px;
 		font-family: contentlight;
 		color: $color-navy;
 		position: relative;
@@ -39,16 +37,16 @@
 		}
 		.content {
 			flex: 1;
-			display: flex;
+			display: grid;
 			align-items: center;
 			background-color: white;
 			box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 			border-radius: 12px;
 			position: relative;
+			height: 300px;
 			z-index: 2;
 			i {
 				font-size: 3em;
-				padding: 15px 20px;
 			}
 			h1 {
 				font-size: 20px;
