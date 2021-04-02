@@ -1,15 +1,19 @@
 .content {
   grid-area: content;
+  // width: 70vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .header {
   grid-area: header;
   position: relative;
   top: 0;
-  width: 70%;
+  width: 70vw;
   height: 2.5rem;
   left: 0px;
   right: 0px;
+  padding: 25px 0 25px 0;
 }
 
 .name {
@@ -95,7 +99,6 @@
 
 .box {
   color: $color-aqua;
-  padding: 25px 0 25px 0;
 }
 
 .content {
