@@ -6,7 +6,7 @@
 	flex-wrap: wrap;
 	#wiki-li {
 		width: 300px;
-		margin: 7px 10px;
+		margin: 20px;
 		font-family: contentlight;
 		color: $color-navy;
 		position: relative;
@@ -18,7 +18,7 @@
 				background-color: #fff8e4; 
 			}
 			&:before {
-				transform: scaleX(1.03) scaleY(1.13);
+				transform: scaleX(1.10) scaleY(1.10);
 				transition: 0.3s;
 			}
 		}
@@ -40,6 +40,7 @@
 			display: grid;
 			align-items: center;
 			background-color: white;
+			color: $color-navy;
 			box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 			border-radius: 12px;
 			position: relative;
