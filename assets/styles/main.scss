@@ -25,6 +25,7 @@ p {
 	color: $color-navy;
 	padding-top: 1px;
 	padding-bottom: 1px;
+	line-height: 1.6;
 }
 
 .outer-center {
@@ -32,6 +33,7 @@ p {
   align-items: center;
   justify-content: center;
   height: 100%;
+  overflow: clip;
 }
 
 .left {

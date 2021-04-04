@@ -5,11 +5,15 @@ layout: default
 	<h1>Movies</h1>
 	<hr>
 	<br>
+	<!-- convert this into a grid -->
 	{% for movie in site.movies %}
-	<div>
-		<h2 class="left">{{ movie.title }}</h2><h2 class="right">{{ movie.rating }}</h2>
+	<div class="navy">
+		<h2 style="display: inline; float: left;">{{ movie.title }}</h2>
+		<h3 style="display: inline; float: right;">{{ movie.rating }}</h2>
+			<br>
+			<br>
+		</div>
+		<p>{{ movie.content | markdownify }}</p>
+		<hr>  
+		{% endfor %}
 	</div>
-	  <p>{{ movie.content | markdownify }}</p>
-	  <hr>  
-	{% endfor %}
-</div>

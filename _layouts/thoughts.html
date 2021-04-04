@@ -2,8 +2,11 @@
 layout: default
 ---
 <div class="box content">
-	{% for thought in site.thoughts %}
-	  <h2 class="middle navy">{{ thought.title }}</h2>
+	{% assign sorted = site.thoughts | sort: 'date' | reverse %}
+	{% for thought in sorted %}
+	  <h2 style="display: inline; float: left;" class="middle navy">{{ thought.title }}</h2>
+	  <h3 style="display: inline; float: right;" class="right navy">{{ thought.time }}</h2>
+	  <br>
 	  <p>{{ thought.content | markdownify }}</p>
 	  <hr>
 	{% endfor %}
