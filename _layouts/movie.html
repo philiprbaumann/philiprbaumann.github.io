@@ -5,15 +5,17 @@ layout: default
 	<h1>Movies</h1>
 	<hr>
 	<br>
-	<!-- convert this into a grid -->
-	{% for movie in site.movies %}
-	<div class="navy">
-		<h2 style="display: inline; float: left;">{{ movie.title }}</h2>
-		<h3 style="display: inline; float: right;">{{ movie.rating }}</h2>
+	<div class="movie-wrapper">
+		{% for movie in site.movies %}
+		{% assign movieIndex = {{forloop.index0}} | divided_by:4 %}
+		<div class="movie-{% cycle 'right', 'left', 'lmid', 'rmid' %}{{movieIndex}} navy">
+			<h2 style="display: inline; float: left;">{{ movie.title }}</h2>
+			<h3 style="display: inline; float: right;">{{ movie.rating }}</h3>
 			<br>
 			<br>
+			<p>{{ movie.content | markdownify }}</p>
+			<hr>  
 		</div>
-		<p>{{ movie.content | markdownify }}</p>
-		<hr>  
 		{% endfor %}
 	</div>
+</div>
