@@ -1,6 +1,6 @@
 ---
 layout: movie
-title:  "Justice League (Snyder Cut)"
+title:  "Justice League"
 rating: 3/10
 ---
 
