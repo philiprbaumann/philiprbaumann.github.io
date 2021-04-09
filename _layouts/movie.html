@@ -7,15 +7,18 @@ layout: default
 	<br>
 	<div class="movie-wrapper">
 		{% for movie in site.movies %}
-		{% assign movieIndex = {{forloop.index0}} | divided_by:4 %}
-		<div class="movie-{% cycle 'right', 'left', 'lmid', 'rmid' %}{{movieIndex}} navy">
-			<h2 style="display: inline; float: left;">{{ movie.title }}</h2>
-			<h3 style="display: inline; float: right;">{{ movie.rating }}</h3>
+		{% assign movieIndex = forloop.index0 | divided_by:4 %}
+		<div style="grid-area: movie-{% cycle 'left', 'lmid', 'rmid', 'right' %}{{movieIndex}}" class="border navy">
+			<h2 style="width: auto; display: block; float: left;">{{ movie.title }}</h2>
+			<h3 style="width: auto; display: block; float: right;">{{ movie.rating }}</h3>
+			<br>
 			<br>
 			<br>
 			<p>{{ movie.content | markdownify }}</p>
-			<hr>  
 		</div>
 		{% endfor %}
 	</div>
+	<br>
+	<br>
+	<hr>
 </div>

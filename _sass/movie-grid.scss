@@ -1,42 +1,16 @@
 .movie-wrapper {
 	display: grid;
-	gap: 5%;
+	column-gap: 2%;
+	row-gap: 2%;
 	height: auto;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 550px;
 	grid-template-areas: 
 	"movie-left0 movie-lmid0 movie-rmid0 movie-right0"
 	"movie-left1 movie-lmid1 movie-rmid1 movie-right1"
 }
 
-// #movie-wrapper div[class^='movie-left'] {
-// 	grid-area: movie-left;
-// }
-.movie-left0 {
-	grid-area: movie-left0;
-		height: auto;
+.border {
+	border: 2px dashed $color-blue;
+	padding: 10px;
 }
-
-.movie-lmid0 {
-	grid-area: movie-lmid0;
-		height: auto;
-
-}
-
-.movie-rmid0 {
-	grid-area: movie-rmid0;
-		height: auto;
-
-}
-
-.movie-right0 {
-	grid-area: movie-right0;
-		height: auto;
-
-}
-
-.movie-left1 {
-	grid-area: movie-left1;
-
-}
-
-// replace with flex grid 
