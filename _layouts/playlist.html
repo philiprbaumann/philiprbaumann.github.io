@@ -5,9 +5,14 @@ layout: default
 	<h1>Playlists</h1>
 	<hr>
 	<br>
-	{% for playlist in site.playlists %}
-	  <h2> - {{ recipe.playlist }} - </h2>
-	  <p>{{ recipe.content | markdownify }}</p>
-	  <hr>  
+	{% assign sorted_playlists = site.playlists | sort: 'order' %}
+	{% for playlist in sorted_playlists %}
+	<div>
+		<h2 style="writing-mode: vertical-rl; transform: rotate(-180deg);"> - {{ playlist.title }} - {{ playlist.story }}</h2>
+		<div>
+			{{ playlist.embed }}
+		</div>
+	</div>
+	<hr>  
 	{% endfor %}
 </div>
