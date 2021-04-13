@@ -6,13 +6,12 @@ layout: default
 	<hr>
 	<br>
 	{% assign sorted_playlists = site.playlists | sort: 'order' %}
-	{% for playlist in sorted_playlists %}
-	<div>
-		<h2 style="writing-mode: vertical-rl; transform: rotate(-180deg);"> - {{ playlist.title }} - {{ playlist.story }}</h2>
-		<div>
+	<div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-around;">
+		{% for playlist in sorted_playlists %}
+		<div style="flex: 1 0 auto; padding: 20px; ">
+			<h2 id="text-container" style="height:380px; text-align: right; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);"><span> - {{ playlist.title }} - {{ playlist.story }}</span></h2>
 			{{ playlist.embed }}
 		</div>
+		{% endfor %}
 	</div>
-	<hr>  
-	{% endfor %}
 </div>
