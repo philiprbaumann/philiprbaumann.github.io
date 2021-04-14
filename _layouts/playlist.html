@@ -6,10 +6,10 @@ layout: default
 	<hr>
 	<br>
 	{% assign sorted_playlists = site.playlists | sort: 'order' %}
-	<div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-around;">
+	<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 		{% for playlist in sorted_playlists %}
-		<div style="flex: 1 0 auto; padding: 2%; width: 27%;">
-			<h2 id="big-name" style="height:380px; text-align: right; position: relative; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);">
+		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 27vw;">
+			<h2 id="big-name" style="width: 7vw; height:380px; text-align: right; position: relative; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);">
 			 - <span class="text-regular">{{ playlist.title }}</span> - <span class="text-light">{{ playlist.story }}</span>
 			</h2>
 			{{ playlist.embed }}
