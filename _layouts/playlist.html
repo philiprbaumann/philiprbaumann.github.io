@@ -8,8 +8,10 @@ layout: default
 	{% assign sorted_playlists = site.playlists | sort: 'order' %}
 	<div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-around;">
 		{% for playlist in sorted_playlists %}
-		<div style="flex: 1 0 auto; padding: 20px; ">
-			<h2 id="text-container" style="height:380px; text-align: right; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);"><span> - {{ playlist.title }} - {{ playlist.story }}</span></h2>
+		<div style="flex: 1 0 auto; padding: 2%; width: 27%;">
+			<h2 id="big-name" style="height:380px; text-align: right; position: relative; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);">
+			 - <span class="text-regular">{{ playlist.title }}</span> - <span class="text-light">{{ playlist.story }}</span>
+			</h2>
 			{{ playlist.embed }}
 		</div>
 		{% endfor %}
