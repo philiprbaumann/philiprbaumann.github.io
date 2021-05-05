@@ -1,0 +1,31 @@
+.music-wrapper {
+  	padding-top: 1vh;
+  	padding-bottom: 1vh;
+}
+
+.music-link {
+	list-style-type: none; 
+	color: $color-blue;
+	cursor: pointer;
+	text-align: left;
+	transition: 0.4s;
+	padding-bottom: 1vw;
+}
+
+.active, .music-link:hover {
+	color: $color-navy;
+}
+
+.music-info {
+	display: none;
+	overflow: hidden;
+	border: 2px dashed $color-blood;
+	width: 50%;
+}
+
+.music-text {
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}

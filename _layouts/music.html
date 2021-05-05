@@ -5,9 +5,12 @@ layout: default
 	<h1 class="text-bold">Music</h1>
 	<hr>
 	<br>
-	{% for music in site.music %}
-	  <h2 class="middle text-bold navy">{{ music.title }}</h2>
-	  <p>{{ music.content | markdownify }}</p>
-	  <hr>  
-	{% endfor %}
+	<ul class="music-wrapper">
+		{% for music in site.music %}
+		<li class="music-link text-light navy">{{ music.title }}</li>
+			<div class="music-info">
+				<div class="music-text"><p>{{ music.content | markdownify }}</p></div>
+			</div>
+		{% endfor %}
+	</ul>
 </div>
