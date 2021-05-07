@@ -2,11 +2,12 @@
 layout: default
 ---
 <div class="box content">
-	<h1 class="text-bold">Code / Technology / How-Tos</h1>
+	{% assign sorted = site.code | sort: 'date' | reverse %}
+	<h1 class="text-light">Code / Technology / How-Tos</h1>
 	<hr>
 	<br>
-	{% for tech in site.code %}
-	  <h2 class="middle text-bold navy">{{ tech.title }}</h2>
+	{% for tech in sorted %}
+	  <h2 class="middle text-regular navy">{{ tech.title }}</h2>
 	  <p>{{ tech.content | markdownify }}</p>
 	  <hr>  
 	{% endfor %}

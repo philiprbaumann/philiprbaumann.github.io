@@ -7,9 +7,9 @@ layout: default
 	<br>
 	<ul class="music-wrapper">
 		{% for music in site.music %}
-		<li class="music-link text-light navy">{{ music.title }}</li>
+		<li class="music-link text-regular navy">{{ music.title }}</li>
 			<div class="music-info">
-				<div class="music-text"><p>{{ music.content | markdownify }}</p></div>
+				<div class="music-text text-light"><p>{{ music.content | markdownify }}</p></div>
 			</div>
 		{% endfor %}
 	</ul>

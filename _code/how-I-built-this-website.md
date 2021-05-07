@@ -1,6 +1,7 @@
 ---
 layout: code
 title:  How I Built This Website
+date: 2021-03-25
 ---
 
 After coming across digital gardens online, I decided I wanted to build one myself. I began this process by researching personal websites and digital gardens that I found interesting, dynamic, or unique. A ton of my inspiration goes out to these developers, so thank you!
