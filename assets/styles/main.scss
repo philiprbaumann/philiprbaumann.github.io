@@ -126,7 +126,7 @@ hr {
 }
 
 .footer-ul {
-    background-color: $color-white;
+    background-color: $color-teal;
 	overflow: hidden;
 	align-content: center;
 	display: inline-flex;
@@ -135,21 +135,37 @@ hr {
 
 .footer-li {
 	display: inline-flex;
-    justify-content: space-around;
-    margin: 0;
-    text-align: center;
-    padding: 15px 15px;
-	font-size: 9px;
-	font-family: contentlight;
+	justify-content: space-around;
+	text-align: center;
+	padding: 3vh 5vh;
+	font-size: 17px;
 	position: relative;
-  	overflow: hidden;
-  	text-decoration: underline;
+	overflow: hidden;
+	flex-wrap: wrap;
+	text-decoration: none;
 }
 
-.footer-li a:link{
-  color: $color-aqua;
+a:link.footer-li {
+	color: $color-white;
 }
 
-.footer-li a:visited{
-  color: $color-navy;
+a:visited.footer-li  {
+	color: $color-blue;
 }
+
+a:hover.footer-li  {
+	color: $color-blue;
+	background-color: $color-tan;
+}
+
+span.footer-text {
+	width: 100%; 
+	text-decoration: underline;
+}
+
+i.footer-icon {
+	width: 100%; 
+	font-size: 45px; 
+	padding: 1px;
+}
+
