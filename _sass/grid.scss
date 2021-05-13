@@ -29,10 +29,11 @@
 
 .footer {
   grid-area: footer;
-  outline: 2px dashed $color-blood;
+  outline: 2px dashed $color-blue;
   position: relative;
   padding: 10px;
-  height: 20vh;
+  height: 15vh;
+  min-height: 60px;
 }
 
 .wrapper {
@@ -57,7 +58,7 @@
   "footer"
 }
 
-@media only screen and (min-width: 850px)   {
+@media only screen and (min-width: 850px) {
   .wrapper {
     .name {
       display: inline-flex;
