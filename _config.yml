@@ -64,6 +64,8 @@ collections:
     output: true
   code:
     output: true
+  books:
+    output: true
 
 defaults:
   - scope:
@@ -106,6 +108,11 @@ defaults:
       type: "code"
     values:
       layout: "code"
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "books"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
