@@ -25,3 +25,5 @@ What I learned in boating school is...what I learned in boating school is...what
 
 
 >\* Read each question closely and don't forget that your first answer is probably not your best answer.
+
+>\* Find the pattern, understand the pattern, hand-write the pattern, apply the pattern. Repeat.

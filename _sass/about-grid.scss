@@ -13,3 +13,9 @@
 .about-col-right {
 	grid-area: columnright;
 }
+
+@media only screen and (max-width: 1000px) {
+	.about-wrapper {
+		display: inline;
+	}
+}
