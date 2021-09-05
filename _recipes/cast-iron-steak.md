@@ -3,7 +3,7 @@ layout: recipe
 title:  Cast Iron Steak
 ---
 
-I woke up this past weekend with one thought on my mind: a fresh steak. After researching for a few too many hours, I walked to a nearby convenience store and purchased a cast iron steak. Here's the best recipe I found. Sort of a modified version of Alton Brown's approach. This is gonna create a decent amount of smoke so I'd recommend opening a few windows and maybe disabling some fire alarms. Also, if the oil catches on fire, remove oxygen from the oil... **do not pour water onto an oil fire.**
+I woke up this past weekend with one thought on my mind: a fresh steak. After researching for a few too many hours, I walked to a nearby convenience store and purchased a cast iron pan. Here's the best recipe I found. Sort of a modified version of Alton Brown's approach. This is gonna create a decent amount of smoke so I'd recommend opening a few windows and maybe disabling some fire alarms. Also, if the oil catches on fire, remove oxygen from the oil... **do not pour water onto an oil fire.**
 
 With that being said! Here's what we need:
 
