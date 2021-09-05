@@ -16,7 +16,7 @@ Here are the steps to make them:
 1. Preheat the oven to 500 and place the cast iron skillet in the oven.
 2. While this is preheating, bring the steak to room temperature.
 3. Coat the steak with a generous pinch of salt on every side. Move the steak around the plate to soak up anymore seasoning. 
-4. Coat the steak lightly in the Safflower.
+4. Coat the steak lightly in the Safflower oil.
 5. Take the cast iron skillet out of the oven carefully.
 6. Place the steak on the skillet for one minute without moving. 
 7. Flip the steak over and put it back in the oven. 
