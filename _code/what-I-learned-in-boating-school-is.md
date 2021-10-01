@@ -18,7 +18,7 @@ What I learned in boating school is...what I learned in boating school is...what
 >\* While consistency is key, that doesn't mean you can always sit down, focus, and get the job done (especially with work, a social life, hobbies, etc.). It's okay to to chalk some topics up to "not today". Just as long as its not too often.
 
 
->\* Doing something physical makes it _a ton_ easier to to focus on whatever you need to focus on. 
+>\* Doing something physical makes it _a ton_ easier to focus on whatever you need to focus on. 
 
 
 >\* Some work can be done with a boring movie on in the background; other works require the soundtrack to _Interstellar_ echoing through the cavernous halls of galactic cathedrals so that you can save humanity from existance.
