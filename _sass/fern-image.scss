@@ -1,0 +1,16 @@
+.fern-image {
+	max-width: 30vw;
+	max-height: 30vh;
+	width: auto;
+	height: auto;
+}
+
+.fern-wrapper {
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	display: grid;
+	column-gap: 2vw;
+	row-gap: 2vh;
+	height: auto;
+	grid-template-columns: 1fr 1fr 1fr;
+}
