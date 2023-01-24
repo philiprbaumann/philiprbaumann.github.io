@@ -9,12 +9,12 @@ $(document).ready(function() {
 });
 
 $(window).scroll(function() {
-	var wH = $(window).height();
-	var wS = $(this).scrollTop();
+	var wH = $(window).height(); // Get the current computed height
+	var wS = $(this).scrollTop(); // Get the current vertical position of the scroll bar
 	$('.playlist').each(function() {
-		var hT = $( this ).offset().top;
-		var hH = $( this ).outerHeight();
-		if (wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)){
+		var hT = $( this ).offset().top; // returns the distance of the outer border of the current element relative to the closest positioned ancestor element. 
+		var hH = $( this ).outerHeight(); // outerheight for this element
+		if ( (hT > wS) ){ // 		if (wS > (hT+hH-wH) && (hT > wS) ){
 			$( this ).addClass('view')
 			if ($( this ).data('src')) {
 				$($( this ).prop('src', $( this ).data('src')).data('src', false));
