@@ -1,17 +1,25 @@
 ---
 layout: default
 ---
+<head>
+	<link rel="preload" href="https://open.spotify.com/embed/playlist/1TWY5FNalizgBKaoQAUDGX" as="media">
+</head>
 <div class="box content">
 	<h1>Playlists</h1>
 	<hr>
 	<br>
 	{% assign sorted_playlists = site.playlists | sort: 'order' %}
 	<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
+			<h2 id="big-name">Welcome to my playlist collection!</h2>
+			I've been curating my playlists since college. Songs from friends, family, and random encounters. I hope you enjoy!
+		</div>
 		{% for playlist in sorted_playlists %}
 		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
 			<h2 id="big-name" style="height: 50vh; text-align: right; position: relative; float: left; writing-mode: vertical-rl; transform: rotate(-180deg);">
-			 - <span class="text-regular">{{ playlist.title }}</span> - <span class="text-light">{{ playlist.story }}</span>
+			 <span class="text-regular">{{ playlist.title }}</span>
 			</h2>
+			<span class="text-regular">{{ playlist.story }}</span>
 			{{ playlist.embed }}
 		</div>
 		{% endfor %}
