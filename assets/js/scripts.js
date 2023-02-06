@@ -14,7 +14,7 @@ $(window).scroll(function() {
 	$('.playlist').each(function() {
 		var hT = $( this ).offset().top; // returns the distance of the outer border of the current element relative to the closest positioned ancestor element. 
 		var hH = $( this ).outerHeight(); // outerheight for this element
-		if (wS > (hT+hH-wH) && (hT > wS) ){
+		if (wS > (hT+(hH/2)-wH) && (hT > wS) ){
 			$( this ).addClass('view')
 			if ($( this ).data('src')) {
 				$($( this ).prop('src', $( this ).data('src')).data('src', false));

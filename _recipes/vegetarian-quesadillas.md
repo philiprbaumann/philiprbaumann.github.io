@@ -2,7 +2,6 @@
 layout: recipe
 title:  Vegetarian Quesadillas
 ---
-
 My sister found this recipe on Pinterest and I'm a huge fan. It's pretty comparable to a normal quesadilla, except its made with sweet potatoes that adds a nice sweetness to a generally spicy and savory dish.
 
 Ingredients - Makes 4/6 Quesadillas
