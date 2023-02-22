@@ -71,6 +71,7 @@ p {
 .border {
 	border: 2px dashed $color-blood;
 	opacity: .90;
+	border-radius: 1vw;
 }
 
 hr {
@@ -129,11 +130,11 @@ hr {
 }
 
 .footer-ul {
-    background-color: $color-aqua;
 	overflow: hidden;
 	align-content: center;
 	display: inline-flex;
 	justify-content: space-around;
+	outline: 2px solid $color-blue;
 }
 
 .footer-li {
@@ -147,14 +148,17 @@ hr {
 	flex-wrap: wrap;
 	text-decoration: none;
 	width: 20%;
+	outline: 2px solid $color-blue;
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-radius: 25vw; 
 }
 
 a:link.footer-li {
-	color: $color-white;
+	color: $color-teal;
 }
 
 a:visited.footer-li  {
-	color: $color-blue;
+	color: $color-teal;
 }
 
 a:hover.footer-li  {
@@ -164,7 +168,7 @@ a:hover.footer-li  {
 
 i.footer-icon {
 	width: 100%; 
-	font-size: 55px; 
+	font-size: 42px; 
 	padding: 1px;
 	position: absolute;
 	top: 50%;

@@ -14,6 +14,13 @@
 	grid-area: columnright;
 }
 
+.profile-picture {
+	width: 510px; 
+	height: 720px; 
+	border-radius: 100vw; 
+	outline: 2px solid $color-blood;
+}
+
 @media only screen and (max-width: 1000px) {
 	.about-wrapper {
 		display: inline;

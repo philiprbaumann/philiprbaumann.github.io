@@ -29,10 +29,9 @@
 
 .footer {
   grid-area: footer;
-  outline: 2px dashed $color-blue;
   position: relative;
   padding: 10px;
-  height: 15vh;
+  height: 5vh;
   min-height: 60px;
 }
 
@@ -65,7 +64,7 @@
       width: 25vw;
     }
     .main-navigation {
-      width: auto;
+      width: 70vw;
     }
     grid-gap: 0px;
     grid-template-columns: auto;
