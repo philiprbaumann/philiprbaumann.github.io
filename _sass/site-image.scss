@@ -15,3 +15,10 @@
 	grid-template-columns: auto auto auto;
 	justify-content: space-between
 }
+
+.background-image {
+	background-image: url("../images/garden-background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
