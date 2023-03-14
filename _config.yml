@@ -30,16 +30,6 @@ github_username:  philiprbaumann
 markdown:    kramdown
 highlighter: rouge
 
-# Paginate settings
-pagination:
-  enabled: true
-  per_page: 3
-  permalink: '/page/:num/'
-  title: ' - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-
 # Markdown Processors
 kramdown:
   input: GFM
@@ -50,7 +40,6 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate-v2
 
 # SASS settings
 sass:
