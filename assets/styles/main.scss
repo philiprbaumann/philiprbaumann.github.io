@@ -21,6 +21,8 @@ body {
 	color: $color-blue;
 	font-family: content;
 	margin: 0;
+	width: 100%;
+	height: 100%;
 }
 
 head {
@@ -109,6 +111,18 @@ hr {
   	font-size: 20px;
 }
 
+@media only screen and (max-width: 500px) {
+	.main-navigation__item {
+		display: block;
+		margin: 2vh auto auto auto;
+	}
+
+	.main-navigation {
+		display: block;
+		margin: auto;
+	}
+}
+
 .main-navigation a, a.inactive {
 	color: $color-navy;
 }
@@ -133,7 +147,6 @@ hr {
 }
 
 .footer-ul {
-	overflow: hidden;
 	align-content: center;
 	display: inline-flex;
 	justify-content: space-around;
@@ -145,12 +158,11 @@ hr {
 	justify-content: space-around;
 	text-align: center;
 	padding: 3vh;
-	font-size: 17px;
 	position: relative;
 	overflow: hidden;
 	flex-wrap: wrap;
 	text-decoration: none;
-	width: 20%;
+	width: 10vw;
 	outline: 2px solid $color-blue;
 	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 	border-radius: 25vw; 
@@ -170,8 +182,7 @@ a:hover.footer-li  {
 }
 
 i.footer-icon {
-	width: 100%; 
-	font-size: 42px; 
+	font-size: 3vh; 
 	padding: 1px;
 	position: absolute;
 	top: 50%;

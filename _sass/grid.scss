@@ -10,8 +10,6 @@
   grid-area: header;
   position: relative;
   top: 0;
-  width: 70vw;
-  height: 2.5rem;
   left: 0px;
   right: 0px;
   padding: 25px 0 25px 0;
@@ -30,8 +28,8 @@
 .footer {
   grid-area: footer;
   position: relative;
-  padding: 10px;
-  height: 5vh;
+  padding: 1vh;
+  height: 7.3vh;
   min-height: 60px;
 }
 
@@ -70,7 +68,7 @@
     grid-template-columns: auto;
     grid-template-areas:
     "name header header header header"
-    "content content content content content "
+    "content content content content content"
     "footer footer footer footer footer";
   }
 }
