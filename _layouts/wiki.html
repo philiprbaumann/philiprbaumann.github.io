@@ -6,10 +6,10 @@ layout: default
 	<h1 class="text-regular navy">Welcome to my Wiki!</h1>
 	<hr>
 	<h2 class="text-light middle navy">A collection of half-baked ideas, unnecessary opinions, personal interests, and shareable tidbits.</h2>
-	<ul id="wiki-ul">
+	<ul class="wiki-ul">
 		{% for page in site.wiki %}
-		<li id="wiki-li">
-			<a id="wiki-link" href="/{{ page.title }}">
+		<li class="wiki-li">
+			<a class="wiki-link" href="/{{ page.title }}">
 				<div class="content">
 					<i class="fa fa-{{ page.icon }}"></i>
 					<div>

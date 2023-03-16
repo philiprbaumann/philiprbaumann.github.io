@@ -1,4 +1,4 @@
-#wiki-ul {
+.wiki-ul {
 	padding-right: 40px;
 	height: 100%;
 	list-style: none;
@@ -6,7 +6,7 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	padding-bottom: 3vh;
-	#wiki-li {
+	.wiki-li {
 		width: 300px;
 		margin: 20px;
 		font-family: contentlight;

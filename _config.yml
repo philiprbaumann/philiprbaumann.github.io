@@ -40,7 +40,8 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
+  - jekyll-sitemap
+  
 # SASS settings
 sass:
   style: compressed
