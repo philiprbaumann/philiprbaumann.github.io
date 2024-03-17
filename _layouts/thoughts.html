@@ -5,7 +5,7 @@ layout: default
 	<h1 class="text-regular navy">Thoughts</h1>
 	<hr>
 	<div class="thought-wrapper">
-		{% assign sorted = site.thoughts | sort: 'date' | reverse %}
+		{% assign sorted = site.thoughts | where_exp:"t","t.view == true" | sort: 'date' | reverse %}
 		{% for thought in sorted %}
 		<div style="grid-row: {{ forloop.index | times:2 | minus:1 }}" class="thought-col-left">
 			<h2 class="middle navy">{{ thought.title }}</h2>
