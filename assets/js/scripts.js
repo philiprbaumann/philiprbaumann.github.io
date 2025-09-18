@@ -34,6 +34,27 @@ document.addEventListener('DOMContentLoaded', function () {
       panel.style.display = 'none';
     }
   });
+
+  // Progressive enhancement: mark external links to open safely in a new tab
+  (function markExternalLinks() {
+    var anchors = document.querySelectorAll('a[href^="http"]');
+    var host = location.hostname;
+    anchors.forEach(function (a) {
+      try {
+        var url = new URL(a.href);
+        if (url.hostname && url.hostname !== host) {
+          if (!a.hasAttribute('target')) a.setAttribute('target', '_blank');
+          var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+          ['noopener', 'noreferrer', 'external'].forEach(function (flag) {
+            if (rel.indexOf(flag) === -1) rel.push(flag);
+          });
+          a.setAttribute('rel', rel.join(' '));
+        }
+      } catch (e) {
+        // ignore parsing errors
+      }
+    });
+  })();
 });
 
 // Lazy-load and "view" state for Spotify iframes

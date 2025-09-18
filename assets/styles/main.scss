@@ -178,11 +178,11 @@ hr {
 }
 
 a:link.footer-li {
-	color: $color-teal;
+	color: $color-blue; /* improved contrast on light chip background */
 }
 
 a:visited.footer-li  {
-	color: $color-teal;
+	color: $color-blue; /* maintain AA contrast after visit */
 }
 
 a:hover.footer-li  {

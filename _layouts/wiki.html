@@ -2,14 +2,12 @@
 layout: default
 ---
 <div class="box content">
-	<hr>
 	<h1 class="text-regular navy">Welcome to my Wiki!</h1>
-	<hr>
 	<h2 class="text-light middle navy">A collection of half-baked ideas, unnecessary opinions, personal interests, and shareable tidbits.</h2>
 	<ul class="wiki-ul">
 		{% for page in site.wiki %}
 		<li class="wiki-li">
-			<a class="wiki-link" href="/{{ page.title }}">
+			<a class="wiki-link" href="{{ page.url | relative_url }}">
 				<div class="content">
 					{% include icon.html name=page.icon class="wiki-icon" %}
 					<div>

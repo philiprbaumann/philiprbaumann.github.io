@@ -1,8 +1,7 @@
 .content {
   grid-area: content;
   position: relative;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-inline: clamp(1rem, 5vw, 3rem);
   height: max-content;
 }
 
@@ -46,7 +45,7 @@
     width: 100%;
   }
   display: grid;
-  gap: 1em;
+  gap: clamp(0.5rem, 2vw, 1rem);
   grid-template-areas:
   "header"
   "content"
@@ -73,5 +72,5 @@
 }
 
 .box {
-  color: $color-aqua;
+  color: $color-text;
 }

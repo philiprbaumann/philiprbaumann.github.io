@@ -3,8 +3,6 @@ layout: default
 ---
 <div class="box content">
 	<h1 class="text-regular navy">Music</h1>
-	<hr>
-	<br>
 	<ul class="music-wrapper">
 		{% for music in site.music %}
 		{% assign panel_id = 'music-' | append: forloop.index %}
