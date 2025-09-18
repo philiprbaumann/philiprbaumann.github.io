@@ -4,11 +4,21 @@ layout: default
 <div class="box content">
 	{% assign sorted = site.code | sort: 'date' | reverse %}
 	<h1 class="text-regular navy">Code / Technology / How-Tos</h1>
-	<hr>
-	<br>
+
+	<div class="code-list">
 	{% for tech in sorted %}
-	  <h2 class="middle text-regular navy">{{ tech.title }}</h2>
-	  <p>{{ tech.content | markdownify }}</p>
-	  <hr>  
+	  <article class="code-item">
+	    <h2 class="middle text-regular navy">
+	      <a href="{{ tech.url | relative_url }}">{{ tech.title }}</a>
+	    </h2>
+	    {% if tech.date %}
+	    <p class="text-light">
+	      <time datetime="{{ tech.date | date_to_xmlschema }}">{{ tech.date | date: "%b %-d, %Y" }}</time>
+	    </p>
+	    {% endif %}
+	    <p>{{ tech.content | markdownify | strip_html | truncatewords: 60 }}</p>
+	    <p><a href="{{ tech.url | relative_url }}">Read more</a></p>
+	  </article>
 	{% endfor %}
+	</div>
 </div>

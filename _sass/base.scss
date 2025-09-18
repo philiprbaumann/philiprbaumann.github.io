@@ -5,7 +5,6 @@ $color-orange: #e07a5f;
 $color-o-light: #fc886b;
 $color-blue: #3d405b;
 $color-teal: #81b29a;
-$color-navy: #f2cc8f;
 
 //Color-set 2
 $color-navy: #264653;
@@ -14,6 +13,14 @@ $color-yellow: #e9c46a;
 $color-gold: #f4a261;
 $color-blood: #e76f51;
 $color-white: #f7f7f5;
+
+// Semantic color roles (use these for new styles; tokens above remain for backward compatibility)
+$color-bg: $color-white;
+$color-text: $color-blue;
+$color-text-strong: $color-navy;
+$color-accent: $color-aqua;
+$color-accent-contrast: $color-white;
+$color-border: rgba($color-blue, 0.25);
 
 // Color palette found here:
 // https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f

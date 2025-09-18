@@ -2,6 +2,8 @@
 	display: grid;
   	grid-template-columns: repeat(2, 1fr);
   	grid-template-areas: "columnleft columnright";
+  	gap: 1rem 2rem;
+  	align-items: start;
 }
 
 .about-col-left {
@@ -13,8 +15,11 @@
 }
 
 .profile-picture {
-	width: 510px; 
-	height: 720px; 
+	max-width: clamp(220px, 45vw, 510px);
+	width: 100%;
+	height: auto;
+	aspect-ratio: 5 / 7;
+	object-fit: cover;
 	border-radius: 100vw;
 	padding-bottom: 2vh;
 	padding-top: 2vh;
@@ -22,13 +27,16 @@
 
 @media only screen and (max-width: 1200px) {
 	.about-wrapper {
-		display: inline;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"columnleft"
+			"columnright";
 	}
 }
 
 
 @media only screen and (max-width: 500px) {
 	.profile-picture {
-		display: none;
+		max-width: 75vw;
 	}
 }

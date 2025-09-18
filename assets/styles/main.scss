@@ -1,6 +1,7 @@
 ---
 ---
 
+/* stylelint-disable */
 @import "fonts";
 @import "base";
 @import "typography";
@@ -129,12 +130,12 @@ hr {
 }
 
 .main-navigation a:hover {
-	background-color: $color-aqua;
+	background-color: $color-blue; /* improved contrast */
 	color: $color-white;
 }
 
 .main-navigation a.active {
-	background-color: $color-aqua;
+	background-color: $color-blue; /* improved contrast */
 	color: $color-white;
 }
 
@@ -275,7 +276,8 @@ html {
 
 /* Enhanced focus styles for accessibility */
 .main-navigation__item:focus-visible,
-a.footer-li:focus-visible {
+a.footer-li:focus-visible,
+button.music-link:focus-visible {
   outline: 3px solid $color-aqua;
   outline-offset: 2px;
   box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.25);
@@ -290,4 +292,51 @@ a.footer-li:focus-visible {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Panels and section lists */
+.panel {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* Code and Book index lists */
+.code-list,
+.book-list {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+}
+
+.code-item,
+.book-item {
+  padding: 0.5rem 0 1rem 0;
+  border-bottom: 1px dashed rgba($color-blue, 0.35);
+}
+
+.code-item:last-child,
+.book-item:last-child {
+  border-bottom: 0;
+}
+
+.code-item h2 a,
+.book-item h2 a {
+  color: $color-blue;
+  text-decoration: underline;
+}
+
+.code-item h2 a:hover,
+.book-item h2 a:hover {
+  color: $color-navy;
+}
+
+/* Thoughts divider alignment tweak (works with grid) */
+.thought-divider {
+  grid-column: 1 / -1;
+  border: 0;
+  border-top: 1px dashed rgba($color-blue, 0.35);
+  margin: 1rem 0;
 }
