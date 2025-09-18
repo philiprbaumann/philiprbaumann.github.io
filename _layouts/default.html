@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
-	{% include title.html %}
+<html lang="en">
 <head>
 	{% include head.html %}
 </head>
 <body>
+	<a href="#content" class="sr-only sr-only-focusable">Skip to content</a>
 	<div class="wrapper">
 		<!-- <div class="background-image wrapper"> -->
 			{% include main-navigation.html %}
-			{{ content }}
+			<main id="content" role="main" class="prose container-readable">
+				{{ content }}
+			</main>
 		<!-- </div> -->
 		{% include jquery.html %}
 		{% include footer.html %}

@@ -1,29 +1,35 @@
 .music-wrapper {
   	padding-top: 1vh;
   	padding-bottom: 1vh;
+  	list-style: none;
+  	padding-left: 0;
+  	margin: 0;
 }
 
-.music-link {
-	list-style-type: none; 
+button.music-link {
 	color: $color-blue;
 	cursor: pointer;
-	text-align: left;
 	transition: 0.4s;
 	padding: 1vh 1vw;
 	text-decoration: underline;
 	font-weight: normal;
+	background: none;
+	border: 0;
+	width: 100%;
+	display: block;
+	text-align: left;
 }
 
-.active, .music-link:hover {
+.active, button.music-link:hover {
 	color: $color-navy;
-	font-weight: bold;
+	font-weight: inherit;
 }
 
 .music-info {
 	overflow: hidden;
 	display: none;
 	border: 2px dashed $color-blood;
-	width: 50%;
+	width: 100%;
 }
 
 .music-text {

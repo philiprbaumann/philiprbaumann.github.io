@@ -7,10 +7,15 @@ layout: default
 	<br>
 	<ul class="music-wrapper">
 		{% for music in site.music %}
-		<li class="music-link text-regular navy">{{ music.title }}</li>
-			<div class="music-info">
+		{% assign panel_id = 'music-' | append: forloop.index %}
+		<li class="music-item">
+			<button class="music-link text-regular navy" type="button" aria-expanded="false" aria-controls="{{ panel_id }}">
+				{{ music.title }}
+			</button>
+			<div id="{{ panel_id }}" class="music-info" hidden>
 				<div class="music-text text-light"><p>{{ music.content | markdownify }}</p></div>
 			</div>
+		</li>
 		{% endfor %}
 	</ul>
 </div>

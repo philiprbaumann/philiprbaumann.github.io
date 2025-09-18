@@ -3,9 +3,16 @@
 }
 
 .playlist {
-	width: 70vw; 
-	height: 50vh;
-	float: right;
+	/* Make embeds responsive and centered */
+	width: 100%;
+	max-width: 800px;
+	height: 380px;       /* matches typical Spotify embed */
+	max-height: 60vh;    /* protect small viewports */
+	display: block;
+	margin: 0 auto;
+	float: none;
+
+	/* Reveal animation */
 	opacity: 0;
-	transition: all 1s linear; //opacity 2s ease-in-out, height 3s ease-in-out;
+	transition: opacity .6s ease;
 }

@@ -1,7 +1,17 @@
-{% include name.html %}	
-<nav class="main-navigation box header">
-  <a href="/" {% if page.url == '/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">home</a>
-  <a href="/resume" {% if page.url == '/resume/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">resume</a>
-  <a href="/wiki" {% if page.url == '/wiki/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">wiki</a>
-  <a href="/thoughts" {% if page.url == '/thoughts/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">thoughts</a>	
+{% include name.html %}
+<nav class="main-navigation box header" aria-label="Primary">
+  <ul class="main-navigation__list">
+    <li class="main-navigation__li">
+      <a href="/" class="main-navigation__item{% if page.url == '/' %} active{% endif %}" {% if page.url == '/' %}aria-current="page"{% endif %}>home</a>
+    </li>
+    <li class="main-navigation__li">
+      <a href="/resume" class="main-navigation__item{% if page.url == '/resume/' %} active{% endif %}" {% if page.url == '/resume/' %}aria-current="page"{% endif %}>resume</a>
+    </li>
+    <li class="main-navigation__li">
+      <a href="/wiki" class="main-navigation__item{% if page.url == '/wiki/' %} active{% endif %}" {% if page.url == '/wiki/' %}aria-current="page"{% endif %}>wiki</a>
+    </li>
+    <li class="main-navigation__li">
+      <a href="/thoughts" class="main-navigation__item{% if page.url == '/thoughts/' %} active{% endif %}" {% if page.url == '/thoughts/' %}aria-current="page"{% endif %}>thoughts</a>
+    </li>
+  </ul>
 </nav>

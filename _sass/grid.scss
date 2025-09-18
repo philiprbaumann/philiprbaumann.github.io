@@ -29,7 +29,6 @@
   grid-area: footer;
   position: relative;
   padding: 1vh;
-  height: 7.3vh;
   min-height: 60px;
 }
 
@@ -44,10 +43,10 @@
       width: 0vw;
   }
   .main-navigation {
-    width: 100vw;
+    width: 100%;
   }
   display: grid;
-  grid-gap: 1em;
+  gap: 1em;
   grid-template-areas:
   "header"
   "content"
@@ -64,7 +63,7 @@
     .main-navigation {
       width: 70vw;
     }
-    grid-gap: 0px;
+    gap: 0px;
     grid-template-columns: auto;
     grid-template-areas:
     "name header header header header"

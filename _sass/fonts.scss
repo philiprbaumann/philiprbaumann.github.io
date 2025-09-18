@@ -1,26 +1,41 @@
 @font-face {
 	font-family: "content";
 	src: url("../fonts/IBMPlexMono-Regular.ttf");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "contentbold";
 	src: url("../fonts/IBMPlexMono-Bold.ttf");
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "contentlight";
 	src: url("../fonts/IBMPlexMono-Light.ttf");
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "title";
 	src: url("../fonts/OpenSans-Bold.ttf");
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "bigname";
 	src: url("../fonts/RobotoSlab-Bold.ttf");
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
 }
 
 .text-light {

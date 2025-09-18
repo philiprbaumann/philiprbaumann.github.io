@@ -1,0 +1,93 @@
+/* Typography scale, rhythm, and readable defaults */
+/* Uses font families from _sass/fonts.scss and colors from _sass/base.scss */
+
+$font-content: content;
+$font-title: title;
+$font-content-light: contentlight;
+$font-content-bold: contentbold;
+
+/* Fluid type scale */
+$h1-size: clamp(1.875rem, 1.2rem + 2.5vw, 2.75rem);  /* ~30–44px */
+$h2-size: clamp(1.5rem, 1.05rem + 1.5vw, 2rem);      /* ~24–32px */
+$h3-size: clamp(1.25rem, 1.0rem + 0.8vw, 1.5rem);    /* ~20–24px */
+$h4-size: 1.125rem;                                   /* 18px */
+$h5-size: 1rem;                                       /* 16px */
+$h6-size: 0.875rem;                                   /* 14px */
+
+$leading: 1.6;
+
+:root {
+  /* reserved for potential CSS custom properties if needed later */
+}
+
+/* Base text rhythm helpers */
+.prose {
+  line-height: $leading;
+  p + p { margin-top: 0.75rem; }
+  ul, ol { margin: 0.75rem 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.25rem 0; }
+  blockquote {
+    margin: 1rem 0; padding: 0.75rem 1rem;
+    border-left: 4px solid $color-aqua; background: rgba(0,0,0,0.02);
+  }
+  img, iframe { margin: 1rem 0; }
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: $font-title, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: $color-blue;
+  line-height: 1.25;
+  margin: 1.25rem 0 0.5rem;
+}
+h4, h5, h6 {
+  font-family: $font-content-bold, $font-content, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: $color-blue;
+  line-height: 1.3;
+  margin: 1rem 0 0.5rem;
+}
+
+h1 { font-size: $h1-size; letter-spacing: -0.02em; }
+h2 { font-size: $h2-size; letter-spacing: -0.01em; }
+h3 { font-size: $h3-size; }
+h4 { font-size: $h4-size; }
+h5 { font-size: $h5-size; }
+h6 { font-size: $h6-size; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Paragraphs, small text, emphasis */
+p {
+  margin: 0.5rem 0 1rem;
+}
+small, .text-small {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+strong { font-family: $font-content-bold, $font-content; }
+
+/* Links */
+a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: $color-navy;
+}
+a:hover {
+  color: $color-white;
+  background: $color-aqua;
+}
+
+/* Utility text classes */
+.text-light { font-family: $font-content-light; }
+.text-regular { font-family: $font-content; }
+.text-bold { font-family: $font-content-bold; }
+.title { font-family: $font-title; }
+
+/* Lists reset helper */
+.list-unstyled { list-style: none; padding-left: 0; margin: 0; }
+
+/* Clamp article width while allowing full-bleed images if desired */
+.container-readable {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

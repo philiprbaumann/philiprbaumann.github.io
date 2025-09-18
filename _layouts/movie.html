@@ -7,18 +7,20 @@ layout: default
 	<br>
 	<div class="movie-wrapper">
 		{% for movie in site.movies %}
-		{% assign movieIndex = forloop.index0 | divided_by:4 %}
-		<div style="grid-area: movie-{% cycle 'left', 'lmid', 'rmid', 'right' %}{{movieIndex}}" class="border navy">
-			<h2 style="width: auto; display: block; float: left;">{{ movie.title }}</h2>
-			<h3 style="width: auto; display: block; float: right;">{{ movie.rating }}</h3>
-			<br>
-			<br>
-			<br>
-			<p>{{ movie.content | markdownify }}</p>
-		</div>
+			<article class="movie-card border navy">
+				<header class="movie-card__header">
+					<h2 class="movie-card__title">{{ movie.title }}</h2>
+					{% if movie.rating %}
+					<div class="movie-card__rating">
+						<span class="sr-only">Rating:</span>
+						<span aria-hidden="true">{{ movie.rating }}</span>
+					</div>
+					{% endif %}
+				</header>
+				<div class="movie-card__body">
+					{{ movie.content | markdownify }}
+				</div>
+			</article>
 		{% endfor %}
 	</div>
-	<br>
-	<hr>
-	<br>
 </div>

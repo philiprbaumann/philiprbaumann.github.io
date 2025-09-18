@@ -25,6 +25,32 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://philiprbaumann.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  philiprbaumann
+robots: "noindex, nofollow"
+
+# Site language for jekyll-seo-tag
+lang: en
+
+# Author/site owner metadata
+author:
+  name: "Philip R. Baumann"
+  email: "philiprbaumann@gmail.com"
+
+# Open Graph / Twitter defaults for jekyll-seo-tag
+logo: /assets/images/logo_transparent.png
+image: /assets/images/garden-background-header.jpg
+
+# Twitter card defaults (omit username if not applicable)
+twitter:
+  card: summary_large_image
+
+# Social profile links for sameAs/OG
+social:
+  name: "Philip R. Baumann"
+  links:
+    - https://github.com/philiprbaumann
+    - https://www.linkedin.com/in/philiprbaumann
+    - mailto:philiprbaumann@gmail.com
+    - https://open.spotify.com/user/22twu4y2zmxnmjwzroyjb3mga
 
 # Conversion
 markdown:    kramdown
