@@ -8,14 +8,34 @@
 	height: auto;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-auto-rows: 1fr;
-	grid-template-areas: 
+	grid-template-areas:
 	"movie-left0 movie-lmid0 movie-rmid0 movie-right0"
 	"movie-left1 movie-lmid1 movie-rmid1 movie-right1"
 	"movie-left2 movie-lmid2 movie-rmid2 movie-right2"
 	"movie-left3 movie-lmid3 movie-rmid3 movie-right3"
+	"movie-left4 movie-lmid4 movie-rmid4 movie-right4"
 }
 
 .border {
 	border: 2px dashed $color-blue;
 	padding: 10px;
+}
+
+/* Refine movie card spacing/alignment without reintroducing br-based spacing */
+.movie-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: $space-2;
+  margin-bottom: $space-2;
+}
+
+/* Restore comfortable padding on movie cards without affecting other .border uses */
+.movie-wrapper .border {
+  padding: $space-2;
+}
+
+/* Slightly increase grid row spacing for better vertical rhythm on the grid */
+.movie-wrapper {
+  row-gap: $space-3;
 }

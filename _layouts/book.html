@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-<div class="box content">
+<div class="box content flow">
 	<h1 class="text-regular navy">Books</h1>
 	<hr>
-	<br>
 	{% for book in site.books %}
 	  <h2 class="middle text-regular navy">{{ book.title }}</h2>
-  	  <h2 class="middle text-light navy" style="font-size: 1.2em;">{{ book.author }}</h2>
+  	  <h2 class="middle text-light navy">{{ book.author }}</h2>
 	  <p>{{ book.content | markdownify }}</p>
 	  <hr>  
 	{% endfor %}

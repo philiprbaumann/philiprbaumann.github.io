@@ -12,7 +12,7 @@
   top: 0;
   left: 0px;
   right: 0px;
-  padding: 25px 0 25px 0;
+  padding: $space-3 0;
 }
 
 .name {
@@ -21,14 +21,14 @@
   letter-spacing: 6px;
   color: $color-navy;
   font-size: 32px;
-  padding: 5px 0px 0px 5vw;
+  padding: $space-1 0 0 $space-3;
   overflow: visible;
 }
 
 .footer {
   grid-area: footer;
   position: relative;
-  padding: 1vh;
+  padding: $space-2;
   height: 7.3vh;
   min-height: 60px;
 }
@@ -47,7 +47,7 @@
     width: 100vw;
   }
   display: grid;
-  grid-gap: 1em;
+  grid-gap: $space-3;
   grid-template-areas:
   "header"
   "content"
