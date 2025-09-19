@@ -138,8 +138,9 @@ hr {
 }
 
 .main-card {
-	float: center;
-	padding: 0px 15px 15px 15px;
+	margin: 0 auto;
+	padding: 0 15px 15px 15px;
+	display: block;
 }
 
 .footer-ul, .footer-li {

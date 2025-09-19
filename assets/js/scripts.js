@@ -1,29 +1,53 @@
-$(document).ready(function() {
+/* Minimal JS polish:
+ * - Remove stray $('') and double semicolon
+ * - Simplify lazy-load property set
+ * - Throttle scroll handler with requestAnimationFrame
+ */
 
-	$('.music-link').click(function(e) {
-		$(this).next().toggle();;
-	});
-
-	$('')
-	
+$(function () {
+  $('.music-link').on('click', function (e) {
+    e.preventDefault();
+    $(this).next().toggle();
+  });
 });
 
-$(window).scroll(function() {
-	var wH = $(window).height(); // Get the current computed height
-	var wS = $(this).scrollTop(); // Get the current vertical position of the scroll bar
-	$('.playlist').each(function() {
-		var hT = $( this ).offset().top; // returns the distance of the outer border of the current element relative to the closest positioned ancestor element. 
-		var hH = $( this ).outerHeight(); // outerheight for this element
-		if (wS > (hT+(hH/2)-wH) && (hT > wS) ){
-			$( this ).addClass('view')
-			if ($( this ).data('src')) {
-				$($( this ).prop('src', $( this ).data('src')).data('src', false));
-			}
-		} else {
-			$( this ).removeClass('view')
-		}
-	});
-});
+(function () {
+  var ticking = false;
+
+  function onScroll() {
+    var wH = $(window).height();
+    var wS = $(window).scrollTop();
+
+    $('.playlist').each(function () {
+      var $el = $(this);
+      var hT = $el.offset().top;
+      var hH = $el.outerHeight();
+
+      if (wS > (hT + (hH / 2) - wH) && (hT > wS)) {
+        $el.addClass('view');
+
+        var dataSrc = $el.data('src');
+        if (dataSrc) {
+          $el.prop('src', dataSrc).data('src', false);
+        }
+      } else {
+        $el.removeClass('view');
+      }
+    });
+
+    ticking = false;
+  }
+
+  $(window).on('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScroll);
+    }
+  });
+
+  // Run once on load to catch above-the-fold content
+  onScroll();
+})();
 
 
 // function toogleIframe(iframe) {

@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-<head>
-	<link rel="preload" href="https://open.spotify.com/embed/playlist/1TWY5FNalizgBKaoQAUDGX" as="media">
-</head>
+<!-- preload removed to avoid nested <head>; consider adding a page-scoped head include if needed -->
 <div class="box content">
 	<h1 class="text-regular navy">Playlists</h1>
 	<hr>
@@ -18,7 +16,7 @@ layout: default
 		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
 			<h2 id="big-name">
 			 <span class="text-regular navy">{{ playlist.title }}</span>
-			 <spam class="text-regular"> | </spam>
+			 <span class="text-regular"> | </span>
 			 <span class="text-regular orange">{{ playlist.story }}</span>
 			</h2>
 			{{ playlist.embed }}
