@@ -15,8 +15,15 @@ $color-gold: #f4a261;
 $color-blood: #e76f51;
 $color-white: #f7f7f5;
 
-// Color palette found here:
-// https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
+/* Color palette found here:
+ * https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
+ */
+
+/* Spacing scale for consistent rhythm across the site */
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2rem;
 
 .navy {
 	color: $color-navy;
@@ -48,4 +55,16 @@ $color-white: #f7f7f5;
 
 .tan {
 	color: $color-tan;
+}
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

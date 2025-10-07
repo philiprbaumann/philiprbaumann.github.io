@@ -1,11 +1,10 @@
 ---
 layout: default
 ---
-<div class="box content">
+<div class="box content flow">
 	{% assign sorted = site.code | sort: 'date' | reverse %}
 	<h1 class="text-regular navy">Code / Technology / How-Tos</h1>
 	<hr>
-	<br>
 	{% for tech in sorted %}
 	  <h2 class="middle text-regular navy">{{ tech.title }}</h2>
 	  <p>{{ tech.content | markdownify }}</p>

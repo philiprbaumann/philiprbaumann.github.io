@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="box content">
+<div class="box content flow">
 	<h1 class="text-regular navy">Movies</h1>
 	<hr>
 	<br>
@@ -9,16 +9,13 @@ layout: default
 		{% for movie in site.movies %}
 		{% assign movieIndex = forloop.index0 | divided_by:4 %}
 		<div style="grid-area: movie-{% cycle 'left', 'lmid', 'rmid', 'right' %}{{movieIndex}}" class="border navy">
-			<h2 style="width: auto; display: block; float: left;">{{ movie.title }}</h2>
-			<h3 style="width: auto; display: block; float: right;">{{ movie.rating }}</h3>
-			<br>
-			<br>
-			<br>
+			<div class="movie-card-header">
+				<h2 class="text-regular">{{ movie.title }}</h2>
+				<h3 class="text-light">{{ movie.rating }}</h3>
+			</div>
 			<p>{{ movie.content | markdownify }}</p>
 		</div>
 		{% endfor %}
 	</div>
-	<br>
 	<hr>
-	<br>
 </div>

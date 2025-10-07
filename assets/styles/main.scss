@@ -82,6 +82,7 @@ hr {
 	opacity: .75;
 	border: none;
 	border-top: 2px dashed $color-blood;
+	margin: $space-2 0; /* restore vertical rhythm after removing <br> spacers */
 }
 
 .main-navigation-home {
@@ -129,17 +130,18 @@ hr {
 
 .main-navigation a:hover {
 	background-color: $color-aqua;
-	color: $color-white;
+	color: #000000; /* improve contrast on aqua background */
 }
 
 .main-navigation a.active {
 	background-color: $color-aqua;
-	color: $color-white;
+	color: #000000; /* improve contrast on aqua background */
 }
 
 .main-card {
-	float: center;
-	padding: 0px 15px 15px 15px;
+	margin: 0 auto;
+	padding: 0 15px 15px 15px;
+	display: block;
 }
 
 .footer-ul, .footer-li {
@@ -169,11 +171,11 @@ hr {
 }
 
 a:link.footer-li {
-	color: $color-teal;
+	color: $color-blue; /* higher contrast vs white background */
 }
 
 a:visited.footer-li  {
-	color: $color-teal;
+	color: $color-blue; /* higher contrast vs white background */
 }
 
 a:hover.footer-li  {
@@ -191,3 +193,29 @@ i.footer-icon {
 }
 
 
+
+/* Global vertical rhythm to restore spacing across views */
+h1, h2, h3 {
+  margin-top: $space-3;
+  margin-bottom: $space-2;
+}
+p {
+  margin: $space-2 0;
+}
+
+/* Flow utility: adds vertical spacing between siblings */
+.flow > * + * {
+  margin-top: $space-3;
+}
+
+/* Playlist page layout classes (replace prior inline styles) */
+.playlist-page .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.playlist-page .item {
+  flex: 1 0 auto;
+  padding-bottom: 5vw;
+  width: 100%;
+}
