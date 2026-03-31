@@ -1,5 +1,4 @@
 ---
-layout: book
 title:  "Hollow Kingdom"
 author: Kira Jane Buxton
 date: 2022-02-08

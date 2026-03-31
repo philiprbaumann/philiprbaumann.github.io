@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Castaway"
 rating: 9/10
 ---

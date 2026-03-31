@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Dances with Wolves"
 rating: 2/10
 ---

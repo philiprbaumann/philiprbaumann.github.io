@@ -1,5 +1,4 @@
 ---
-layout: music
 title:  The Off-Season - J. Cole
 ---
 

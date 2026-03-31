@@ -1,5 +1,4 @@
 ---
-layout: code
 title:  What I Learned in Boating School Is
 date: 2021-03-25
 ---
@@ -21,7 +20,7 @@ What I learned in boating school is...what I learned in boating school is...what
 >\* Doing something physical makes it _a ton_ easier to focus on whatever you need to focus on. 
 
 
->\* Some work can be done with a boring movie on in the background; other works require the soundtrack to _Interstellar_ echoing through the cavernous halls of galactic cathedrals so that you can save humanity from existance.
+>\* Some work can be done with a boring movie on in the background; other works require the soundtrack to _Interstellar_ echoing through the cavernous halls of galactic cathedrals so that you can save humanity from existence.
 
 
 >\* Read each question closely and don't forget that your first answer is probably not your best answer.

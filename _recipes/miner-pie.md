@@ -1,18 +1,17 @@
 ---
-layout: recipe
 title:  Miner's Pie
 ---
-I got this great Dungeons and Dragons recipe book from a family member and went about making one of the recip.es This is the "Miner's Pie". According to lore, it's Dwarvish. 
+I got this great Dungeons and Dragons recipe book from a family member and went about making one of the recipes. This is the "Miner's Pie". According to lore, it's Dwarvish. 
 
 
 Ingredients -
 - 2lb Ground Beef
 - Olive Oil
 - Bag of frozen corn
-- Bag of frozen pees 
-- Parsely
+- Bag of frozen peas
+- Parsley
 - Onion
-- Leak (can swap with more onion)
+- Leek (can swap with more onion)
 - Tomato paste
 - Flour
 - 3lb Potatoes
@@ -39,7 +38,7 @@ Here is my modified recipe:
  11. Set aside the mixture to cool for about 20 minutes.
  12. Preheat oven to 450 degrees Fahrenheit with the rack in the upper-middle position.
  13. Place potatoes into a pot of boiling water until very tender (about 20 minutes).
- 14. Mash the potatos when properly boiled and add melted butter. Stir to combine.
+ 14. Mash the potatoes when properly boiled and add melted butter. Stir to combine.
  15. Mix in milk, 1.5 teaspoons of salt, pepper, and parmesan cheese. Stir well and adjust seasoning to taste.
  16. Add eggs to the potatoes and stir until fully incorporated.
  17. Spoon the potato mixture over the filling in the casserole dish, spreading it evenly.

@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Stillwater"
 rating: 9/10
 ---

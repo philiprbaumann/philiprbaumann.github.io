@@ -1,5 +1,4 @@
 ---
-layout: code
 title:  Ruby Benchmarking
 date: 2021-03-25
 ---
@@ -39,7 +38,7 @@ This **`Benchmark.measure`** call will return four values in seconds:
 1. The amount of time spent executing the code **that you wrote**: (**`Benchmark.measure.user`**)
 2. The amount of time spent executing **kernel code**: (**`Benchmark.measure.system`**)
 3. The sum of the two totals above, or the sum of the **kernel and the user process** execution time: (**`Benchmark.measure.total`**)
-4. The is final number is what I spend the most of my time looking at which is the **elapsed real time**: (**`Benchmark.measure.real`**)
+4. The final number is what I spend the most of my time looking at which is the **elapsed real time**: (**`Benchmark.measure.real`**)
 
 To print these values you could do:
 ```ruby

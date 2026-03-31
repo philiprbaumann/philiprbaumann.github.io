@@ -1,5 +1,4 @@
 ---
-layout: playlist
 title: jwchens
 section: College
 embed: '<iframe class="playlist" src="about:blank" data-src="https://open.spotify.com/embed/playlist/4wR7TeK9OlLbGWySn9LiZD" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'

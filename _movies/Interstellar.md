@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Interstellar"
 rating: 10/10
 ---

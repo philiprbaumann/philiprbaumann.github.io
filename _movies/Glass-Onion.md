@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Glass Onion: A Knives Out Mystery"
 rating: 4/10
 ---

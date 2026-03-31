@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "American Pickle"
 rating: 7/10
 ---

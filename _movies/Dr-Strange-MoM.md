@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Doctor Strange in the Multiverse of Madness"
 rating: 0/10
 ---

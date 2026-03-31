@@ -93,17 +93,17 @@ defaults:
       path: ""
       type: "playlists"
     values:
-      layout: "playlists"
+      layout: "playlist"
   - scope:
       path: ""
       type: "recipes"
     values:
-      layout: "recipes"
+      layout: "recipe"
   - scope:
       path: ""
       type: "movies"
     values:
-      layout: "movies"
+      layout: "movie"
   - scope:
       path: ""
       type: "code"
@@ -113,7 +113,7 @@ defaults:
       path: ""
       type: "books"
     values:
-      layout: "books"
+      layout: "book"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

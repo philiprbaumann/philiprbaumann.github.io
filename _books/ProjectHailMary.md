@@ -1,5 +1,4 @@
 ---
-layout: book
 title:  "Project Hail Mary"
 author: Andy Weir
 date: 2022-04-19
