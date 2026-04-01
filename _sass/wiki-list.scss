@@ -70,3 +70,14 @@
 	    text-decoration: none;
 	}
 }
+
+@media (max-width: 768px) {
+	.wiki-ul {
+		padding-right: 0;
+	}
+
+	.wiki-ul .wiki-li {
+		width: 100%;
+		margin: 12px 0;
+	}
+}

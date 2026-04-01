@@ -12,3 +12,14 @@
 .thought-col-right {
 	grid-area: columnright;
 }
+
+@media (max-width: 768px) {
+	.thought-wrapper {
+		grid-template-columns: 1fr;
+		grid-template-areas: "columnright";
+	}
+
+	.thought-col-left {
+		display: none;
+	}
+}

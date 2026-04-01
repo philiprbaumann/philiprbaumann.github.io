@@ -13,14 +13,14 @@
 }
 
 .profile-picture {
-	width: 510px; 
-	height: 720px; 
+	width: 510px;
+	height: 720px;
 	border-radius: 100vw;
 	padding-bottom: 2vh;
 	padding-top: 2vh;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 768px) {
 	.about-wrapper {
 		display: inline;
 	}

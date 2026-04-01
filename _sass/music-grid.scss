@@ -26,6 +26,12 @@
 	width: 50%;
 }
 
+@media (max-width: 768px) {
+	.music-info {
+		width: 100%;
+	}
+}
+
 .music-text {
 	padding: 1vh 1vw;
 }

@@ -15,7 +15,7 @@ layout: default
 			I've been curating my playlists since college. Songs from friends, family, and random encounters. I hope you enjoy!
 		</div>
 		{% for playlist in sorted_playlists %}
-		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
+		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%; max-width: 100%; overflow: hidden;">
 			<h2 id="big-name">
 			 <span class="text-regular navy">{{ playlist.title }}</span>
 			 <spam class="text-regular"> | </spam>

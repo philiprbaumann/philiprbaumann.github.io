@@ -16,6 +16,19 @@
 	justify-content: space-between
 }
 
+@media (max-width: 768px) {
+	.image-site-wrapper {
+		grid-template-columns: 1fr;
+		justify-content: center;
+	}
+
+	.site-image {
+		max-width: 100%;
+		max-height: none;
+		width: 100%;
+	}
+}
+
 .background-image {
 	background-image: url("../images/garden-background.jpg");
 	background-repeat: no-repeat;

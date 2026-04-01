@@ -1,16 +1,16 @@
 @font-face {
 	font-family: "content";
-	src: url("../fonts/IBMPlexMono-Regular.ttf");
+	src: url("../fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
 	font-family: "contentbold";
-	src: url("../fonts/IBMPlexMono-Bold.ttf");
+	src: url("../fonts/OpenSans-Bold.ttf");
 }
 
 @font-face {
 	font-family: "contentlight";
-	src: url("../fonts/IBMPlexMono-Light.ttf");
+	src: url("../fonts/OpenSans-Light.ttf");
 }
 
 @font-face {
@@ -21,6 +21,11 @@
 @font-face {
 	font-family: "bigname";
 	src: url("../fonts/RobotoSlab-Bold.ttf");
+}
+
+@font-face {
+	font-family: "mono";
+	src: url("../fonts/IBMPlexMono-Regular.ttf");
 }
 
 .text-light {
