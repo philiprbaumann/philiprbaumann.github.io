@@ -1,14 +1,19 @@
 ---
 layout: default
 ---
-<div class="box content">
-	{% assign sorted = site.code | sort: 'date' | reverse %}
-	<h1 class="text-regular navy">Code / Technology / How-Tos</h1>
-	<hr>
-	<br>
-	{% for tech in sorted %}
-	  <h2 class="middle text-regular navy">{{ tech.title }}</h2>
-	  <p>{{ tech.content | markdownify }}</p>
-	  <hr>  
-	{% endfor %}
+<div class="box content collection-index">
+  {% assign sorted = site.code | sort: 'date' | reverse %}
+  <h1 class="navy">Code</h1>
+  <hr>
+  <ul class="entry-list">
+    {% for tech in sorted %}
+    <li class="entry-list__item">
+      <div class="entry-list__header">
+        <a href="{{ tech.url }}" class="entry-list__title navy">{{ tech.title }}</a>
+        {% if tech.date %}<span class="entry-list__date">{{ tech.date | date: "%b %Y" }}</span>{% endif %}
+      </div>
+      <p class="entry-list__excerpt">{{ tech.content | markdownify | strip_html | truncatewords: 25 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

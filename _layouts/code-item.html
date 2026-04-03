@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="box content single-page">
+  <a href="/code" class="back-link">← Code</a>
+  <h1 class="navy">{{ page.title }}</h1>
+  {% if page.date %}<p class="single-page__date">{{ page.date | date: "%B %Y" }}</p>{% endif %}
+  <hr>
+  {{ content }}
+</div>

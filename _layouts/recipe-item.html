@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="box content single-page">
+  <a href="/recipes" class="back-link">← Recipes</a>
+  <h1 class="navy">{{ page.title }}</h1>
+  {% if page.time or page.servings %}
+  <p class="single-page__date">
+    {% if page.time %}{{ page.time }}{% endif %}
+    {% if page.time and page.servings %} · {% endif %}
+    {% if page.servings %}Serves {{ page.servings }}{% endif %}
+  </p>
+  {% endif %}
+  <hr>
+  {{ content }}
+</div>

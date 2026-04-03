@@ -1,11 +1,18 @@
 ---
 layout: default
 ---
-<div class="box content">
-	<h1 class="text-regular navy">Recipes</h1>
-	{% for recipe in site.recipes %}
-	  <hr>  
-	  <h2 class="text-regular navy">{{ recipe.title }}</h2>
-	  <p class="text-light navy">{{ recipe.content | markdownify }}</p>
-	{% endfor %}
+<div class="box content collection-index">
+  <h1 class="navy">Recipes</h1>
+  <hr>
+  <ul class="entry-list">
+    {% for recipe in site.recipes %}
+    <li class="entry-list__item">
+      <div class="entry-list__header">
+        <a href="{{ recipe.url }}" class="entry-list__title navy">{{ recipe.title }}</a>
+        {% if recipe.time %}<span class="entry-list__date">{{ recipe.time }}</span>{% endif %}
+      </div>
+      <p class="entry-list__excerpt">{{ recipe.content | markdownify | strip_html | truncatewords: 25 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

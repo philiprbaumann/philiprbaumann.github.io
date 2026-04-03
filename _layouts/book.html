@@ -1,14 +1,19 @@
 ---
 layout: default
 ---
-<div class="box content">
-	<h1 class="text-regular navy">Books</h1>
-	<hr>
-	<br>
-	{% for book in site.books %}
-	  <h2 class="middle text-regular navy">{{ book.title }}</h2>
-  	  <h2 class="middle text-light navy" style="font-size: 1.2em;">{{ book.author }}</h2>
-	  <p>{{ book.content | markdownify }}</p>
-	  <hr>  
-	{% endfor %}
+<div class="box content collection-index">
+  <h1 class="navy">Books</h1>
+  <hr>
+  <ul class="entry-list">
+    {% assign sorted_books = site.books | sort: 'date' | reverse %}
+    {% for book in sorted_books %}
+    <li class="entry-list__item">
+      <div class="entry-list__header">
+        <a href="{{ book.url }}" class="entry-list__title navy">{{ book.title }}</a>
+        <span class="entry-list__meta">{{ book.author }}</span>
+      </div>
+      <p class="entry-list__excerpt">{{ book.content | markdownify | strip_html | truncatewords: 30 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

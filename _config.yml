@@ -73,7 +73,7 @@ defaults:
       path: ""
       type: "thoughts"
     values:
-      layout: "thoughts"
+      layout: "thought"
   - scope:
       path: ""
       type: "resume"
@@ -83,7 +83,7 @@ defaults:
       path: ""
       type: "music"
     values:
-      layout: "music"
+      layout: "music-item"
   - scope:
       path: ""
       type: "wiki"
@@ -98,22 +98,22 @@ defaults:
       path: ""
       type: "recipes"
     values:
-      layout: "recipe"
+      layout: "recipe-item"
   - scope:
       path: ""
       type: "movies"
     values:
-      layout: "movie"
+      layout: "movie-item"
   - scope:
       path: ""
       type: "code"
     values:
-      layout: "code"
+      layout: "code-item"
   - scope:
       path: ""
       type: "books"
     values:
-      layout: "book"
+      layout: "book-item"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

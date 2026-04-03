@@ -18,6 +18,14 @@
 - [x] Fix wiki cards: fixed 300px width overflows on small screens (`_sass/wiki-list.scss`)
 - [x] Fix image grid: 3 columns with no mobile fallback (`_sass/site-image.scss`)
 
+## Recipes — Enhanced Format
+- [ ] Add structured frontmatter to all recipe files: `time` (e.g. "30 min"), `servings`, `tags` (e.g. ["meat", "quick"])
+- [ ] Recipe index: consider switching from entry-list to a card grid (like wiki/movies) — recipes are more browsable than linear
+- [ ] Recipe card: show title + time + 1-2 tags as visual chips
+- [ ] Individual recipe page: split content into two clear visual sections — **Ingredients** (left or top, scannable list) and **Instructions** (numbered steps). Currently both are mixed in the markdown body; could enforce a `---` divider convention or use frontmatter for ingredients
+- [ ] Add a `tags` filter or category grouping on the index (e.g. "quick", "vegetarian", "weekend project")
+- [ ] Consider adding a difficulty or equipment field (e.g. `equipment: cast iron`) for filtering
+
 ## Playlists — Journey Timeline
 - [ ] Redesign the playlist page as an interactive horizontal scroll — each playlist is a stop on a continuous winding path
 - [ ] The path should meander up and down organically (SVG or CSS-drawn line), loosely mimicking the rhythm of a life lived — not perfectly straight, not random noise

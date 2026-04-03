@@ -1,22 +1,19 @@
 ---
 layout: default
 ---
-<div class="box content">
-	<h1 class="text-regular navy">Thoughts</h1>
-	<hr>
-	<div class="thought-wrapper">
-		{% assign sorted = site.thoughts | where_exp:"t","t.view == true" | sort: 'date' | reverse %}
-		{% for thought in sorted %}
-		<div style="grid-row: {{ forloop.index | times:2 | minus:1 }}" class="thought-col-left">
-			<h2 class="middle navy">{{ thought.title }}</h2>
-			<h3 class="middle navy">{{ thought.time }}</h3>
-		</div>
-		<div style="grid-row: {{ forloop.index | times:2 | minus:1 }}" class="thought-col-right">
-			<p>{{ thought.content | markdownify }}</p>
-		</div>
-		{% if forloop.index != sorted.size %}
-		<hr style="grid-row: {{ forloop.index | times:2 }}; grid-column: 1/-1;">
-		{% endif %}
-		{% endfor %}
-	</div>
+<div class="box content collection-index">
+  <h1 class="navy">Thoughts</h1>
+  <hr>
+  <ul class="entry-list">
+    {% assign sorted = site.thoughts | where_exp:"t","t.view == true" | sort: 'date' | reverse %}
+    {% for thought in sorted %}
+    <li class="entry-list__item">
+      <div class="entry-list__header">
+        <a href="{{ thought.url }}" class="entry-list__title navy">{{ thought.title }}</a>
+        <span class="entry-list__date">{{ thought.time }}</span>
+      </div>
+      <p class="entry-list__excerpt">{{ thought.content | markdownify | strip_html | truncatewords: 25 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

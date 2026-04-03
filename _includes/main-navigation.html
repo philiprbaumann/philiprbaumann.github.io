@@ -2,9 +2,9 @@
 <nav class="main-navigation box header">
   <button class="nav-hamburger" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
   <div class="nav-links">
-    <a href="/" {% if page.url == '/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">home</a>
-    <a href="/resume" {% if page.url == '/resume/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">resume</a>
-    <a href="/wiki" {% if page.url == '/wiki/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">wiki</a>
-    <a href="/thoughts" {% if page.url == '/thoughts/' %} class="main-navigation__item active"{% endif %} class="main-navigation__item">thoughts</a>
+    <a href="/" class="main-navigation__item{% if page.url == '/' %} active{% endif %}">home</a>
+    <a href="/resume" class="main-navigation__item{% if page.url contains '/resume' %} active{% endif %}">resume</a>
+    <a href="/wiki" class="main-navigation__item{% if page.url contains '/wiki' %} active{% endif %}">wiki</a>
+    <a href="/thoughts" class="main-navigation__item{% if page.url contains '/thoughts' %} active{% endif %}">thoughts</a>
   </div>
 </nav>
