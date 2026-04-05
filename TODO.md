@@ -3,10 +3,10 @@
 ## Content & Privacy
 - [x] Obfuscate birthday in `_thoughts/apr-19-2022.md` (currently reveals April 17 + age 25 in 2022, reconstructing ~1997 birth year)
 - [x] Remove cat's name from `_thoughts/feb-08-2022.md` (pet names are commonly used in security questions)
-- [ ] Add *Project Hail Mary* — note: entry already exists in `_books/ProjectHailMary.md`, may just need review/update
-- [ ] Add *The Stormlight Archive* to books (`_books/`)
-- [ ] Add Stranger Things to the site — decide: extend movies collection to TV, or create a new `_tv/` collection
-- [ ] Add a board games section — new `_boardgames/` collection with its own layout, similar to movies or books
+- [x] Add *Project Hail Mary* — entry exists and is complete
+- [x] Add *The Stormlight Archive* to books (`_books/`) — stub created, add your review
+- [x] Add Stranger Things to the site — created `_tv/` collection with its own index + item layouts; Stranger Things stub added
+- [x] Add a board games section — `_boardgames/` collection created with card grid + individual item layouts; add your entries to `_boardgames/`
 
 ## Mobile Rendering
 - [x] Fix movie grid: currently 4 columns with no mobile breakpoints — broken on phones (`_sass/movie-grid.scss`)
@@ -19,12 +19,12 @@
 - [x] Fix image grid: 3 columns with no mobile fallback (`_sass/site-image.scss`)
 
 ## Recipes — Enhanced Format
-- [ ] Add structured frontmatter to all recipe files: `time` (e.g. "30 min"), `servings`, `tags` (e.g. ["meat", "quick"])
-- [ ] Recipe index: consider switching from entry-list to a card grid (like wiki/movies) — recipes are more browsable than linear
-- [ ] Recipe card: show title + time + 1-2 tags as visual chips
-- [ ] Individual recipe page: split content into two clear visual sections — **Ingredients** (left or top, scannable list) and **Instructions** (numbered steps). Currently both are mixed in the markdown body; could enforce a `---` divider convention or use frontmatter for ingredients
-- [ ] Add a `tags` filter or category grouping on the index (e.g. "quick", "vegetarian", "weekend project")
-- [ ] Consider adding a difficulty or equipment field (e.g. `equipment: cast iron`) for filtering
+- [x] Add structured frontmatter to all recipe files: `time`, `servings`, `tags` — done for all 3 recipes
+- [x] Recipe card: show title + time + tags as visual chips — done
+- [x] Recipe index: switched from entry-list to card grid — `recipe-card-grid` with title, time/servings, tags, and excerpt
+- [x] Individual recipe page: ingredients sidebar (from frontmatter) + instructions column — two-column on desktop, stacked on mobile
+- [x] Add a `tags` filter on the index — jQuery filter bar, tags collected dynamically from frontmatter
+- [x] Equipment field added (`equipment:` frontmatter, shown in meta line)
 
 ## Playlists — Journey Timeline
 - [ ] Redesign the playlist page as an interactive horizontal scroll — each playlist is a stop on a continuous winding path

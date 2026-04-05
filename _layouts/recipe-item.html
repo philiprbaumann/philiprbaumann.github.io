@@ -4,13 +4,34 @@ layout: default
 <div class="box content single-page">
   <a href="/recipes" class="back-link">← Recipes</a>
   <h1 class="navy">{{ page.title }}</h1>
-  {% if page.time or page.servings %}
   <p class="single-page__date">
     {% if page.time %}{{ page.time }}{% endif %}
     {% if page.time and page.servings %} · {% endif %}
-    {% if page.servings %}Serves {{ page.servings }}{% endif %}
+    {% if page.servings %}serves {{ page.servings }}{% endif %}
+    {% if page.equipment %} · {{ page.equipment }}{% endif %}
   </p>
+  {% if page.tags %}
+  <div class="tag-list">
+    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+  </div>
   {% endif %}
   <hr>
+  {% if page.ingredients %}
+  <div class="recipe-body-layout">
+    <aside class="recipe-ingredients">
+      <h2 class="recipe-section-label">Ingredients</h2>
+      <ul>
+        {% for ingredient in page.ingredients %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <div class="recipe-instructions">
+      <h2 class="recipe-section-label">Instructions</h2>
+      {{ content }}
+    </div>
+  </div>
+  {% else %}
   {{ content }}
+  {% endif %}
 </div>

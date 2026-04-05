@@ -1,49 +1,42 @@
 ---
-title:  Miner's Pie
+title: Miner's Pie
+time: "2 hrs"
+servings: 6
+tags: ["meat", "weekend"]
+ingredients:
+  - "2 lb ground beef"
+  - "Olive oil"
+  - "1 bag frozen corn"
+  - "1 bag frozen peas"
+  - "Parsley"
+  - "1 onion"
+  - "1 leek (can swap with more onion)"
+  - "Tomato paste"
+  - "Flour"
+  - "3 lb potatoes"
+  - "Chicken bouillon"
+  - "Thyme"
+  - "Ale (oatmeal stout recommended)"
+  - "Bay leaf"
+  - "Parmesan cheese"
+  - "2 eggs"
+  - "Milk and butter"
+  - "Salt and pepper"
 ---
-I got this great Dungeons and Dragons recipe book from a family member and went about making one of the recipes. This is the "Miner's Pie". According to lore, it's Dwarvish. 
+I got this great Dungeons and Dragons recipe book from a family member and went about making one of the recipes. This is the "Miner's Pie" — according to lore, it's Dwarvish.
 
-
-Ingredients -
-- 2lb Ground Beef
-- Olive Oil
-- Bag of frozen corn
-- Bag of frozen peas
-- Parsley
-- Onion
-- Leek (can swap with more onion)
-- Tomato paste
-- Flour
-- 3lb Potatoes
-- Chicken bouillon
-- Thyme 
-- Ale (heavier the better, oatmeal stout recommended).
-- Bay leaf
-- Parmesan cheese
-- Eggs
-
-
-Here is my modified recipe:
-
- 1. Heat olive oil in a large skillet over medium-high heat until shimmering.
- 2. Add onion, leek, bay leaf, and 1/2 teaspoon of salt to the skillet. Cook, stirring frequently, until softened (about 4 minutes).
- 3. Stir in ground beef and cook, stirring frequently, for approximately 10 minutes.
- 4. Add garlic, thyme, and tomato paste, and cook for about 1 minute.
- 5. Reduce heat to medium, add flour, and stir until fully combined (about 2 minutes).
- 6. Pour in ale, broth, and 2/3 teaspoon of salt. Increase heat to high and bring to a simmer, scraping the bottom of the skillet to dissolve any browned bits (about 1 minute).
- 7. Lower heat to medium-low and cook, stirring occasionally, until the filling thickens but remains saucy (about 15 minutes).
- 8. Add corn and peas, then set aside the skillet to cool slightly. Remove bay leaf, add most of the parsley, and stir.
- 9. Taste and adjust seasoning with salt and pepper as needed.
- 10. Transfer the mixture into a broiler-safe 2-quart casserole dish, spreading it evenly.
- 11. Set aside the mixture to cool for about 20 minutes.
- 12. Preheat oven to 450 degrees Fahrenheit with the rack in the upper-middle position.
- 13. Place potatoes into a pot of boiling water until very tender (about 20 minutes).
- 14. Mash the potatoes when properly boiled and add melted butter. Stir to combine.
- 15. Mix in milk, 1.5 teaspoons of salt, pepper, and parmesan cheese. Stir well and adjust seasoning to taste.
- 16. Add eggs to the potatoes and stir until fully incorporated.
- 17. Spoon the potato mixture over the filling in the casserole dish, spreading it evenly.
- 18. Bake until the filling is heated through and the potatoes are slightly puffed (about 20 minutes).
- 19. Sprinkle with remaining parsley before serving hot.
- 20. Turn on the broiler and broil until the top is golden brown (5-7 minutes).
-
-This will provide you
+1. Heat olive oil in a large skillet over medium-high heat until shimmering.
+2. Add onion, leek, bay leaf, and ½ tsp salt. Cook, stirring, until softened (about 4 minutes).
+3. Stir in ground beef and cook for approximately 10 minutes.
+4. Add garlic, thyme, and tomato paste; cook for 1 minute.
+5. Reduce heat to medium, add flour, and stir until combined (about 2 minutes).
+6. Pour in ale, broth, and ⅔ tsp salt. Bring to a simmer, scraping the bottom (about 1 minute).
+7. Lower heat and cook, stirring occasionally, until the filling thickens but remains saucy (about 15 minutes).
+8. Add corn and peas; cool slightly, remove bay leaf, stir in most of the parsley. Season to taste.
+9. Transfer to a broiler-safe 2-quart casserole dish and let cool 20 minutes.
+10. Preheat oven to 450°F with rack in the upper-middle position.
+11. Boil potatoes until very tender (about 20 minutes), then mash with melted butter.
+12. Mix in milk, 1½ tsp salt, pepper, and parmesan. Stir in eggs.
+13. Spoon the potato mixture over the filling and spread evenly.
+14. Bake until filling is heated through and potatoes are slightly puffed (about 20 minutes).
+15. Broil until the top is golden brown (5–7 minutes). Sprinkle with remaining parsley and serve hot.

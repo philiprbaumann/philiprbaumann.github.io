@@ -67,6 +67,10 @@ collections:
     output: true
   books:
     output: true
+  tv:
+    output: true
+  boardgames:
+    output: true
 
 defaults:
   - scope:
@@ -114,6 +118,16 @@ defaults:
       type: "books"
     values:
       layout: "book-item"
+  - scope:
+      path: ""
+      type: "tv"
+    values:
+      layout: "tv-item"
+  - scope:
+      path: ""
+      type: "boardgames"
+    values:
+      layout: "boardgame-item"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

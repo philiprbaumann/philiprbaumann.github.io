@@ -14,6 +14,7 @@
 @import "resume";
 @import "site-image";
 @import "playlist-timeline";
+@import "recipe-grid";
 
 // Your styles start here
 body {
@@ -34,7 +35,7 @@ head {
 	font-family: title;
 }
 
-p {
+p, li {
 	color: $color-navy;
 	padding-top: 2px;
 	padding-bottom: 2px;
@@ -309,6 +310,24 @@ hr {
 	opacity: 0.65;
 	font-family: contentlight;
 	margin: 0.25rem 0 1rem 0;
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-bottom: 0.6rem;
+}
+
+.tag {
+	font-family: contentbold;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: $color-navy;
+	background: rgba(38, 70, 83, 0.07);
+	border-radius: 4px;
+	padding: 0.2rem 0.5rem;
 }
 
 .footer-ul, .footer-li {

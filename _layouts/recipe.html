@@ -1,18 +1,57 @@
 ---
 layout: default
 ---
-<div class="box content collection-index">
+<div class="box content">
   <h1 class="navy">Recipes</h1>
   <hr>
-  <ul class="entry-list">
+  <div class="recipe-filter-bar">
+    <button class="recipe-filter active" data-filter="all">All</button>
+    {% assign tag_set = "" %}
     {% for recipe in site.recipes %}
-    <li class="entry-list__item">
-      <div class="entry-list__header">
-        <a href="{{ recipe.url }}" class="entry-list__title navy">{{ recipe.title }}</a>
-        {% if recipe.time %}<span class="entry-list__date">{{ recipe.time }}</span>{% endif %}
-      </div>
-      <p class="entry-list__excerpt">{{ recipe.content | markdownify | strip_html | truncatewords: 25 }}</p>
-    </li>
+      {% for tag in recipe.tags %}
+        {% unless tag_set contains tag %}
+          {% assign tag_set = tag_set | append: tag | append: "|" %}
+        {% endunless %}
+      {% endfor %}
     {% endfor %}
-  </ul>
+    {% assign unique_tags = tag_set | split: "|" | sort %}
+    {% for tag in unique_tags %}
+    <button class="recipe-filter" data-filter="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+  <div class="recipe-card-grid">
+    {% for recipe in site.recipes %}
+    <a href="{{ recipe.url }}" class="recipe-card" data-tags="{{ recipe.tags | join: ' ' }}">
+      <h2 class="recipe-card__title">{{ recipe.title }}</h2>
+      {% if recipe.time or recipe.servings %}
+      <span class="recipe-card__meta">
+        {% if recipe.time %}{{ recipe.time }}{% endif %}
+        {% if recipe.time and recipe.servings %} · {% endif %}
+        {% if recipe.servings %}serves {{ recipe.servings }}{% endif %}
+      </span>
+      {% endif %}
+      {% if recipe.tags %}
+      <div class="tag-list">
+        {% for tag in recipe.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+      <p class="recipe-card__excerpt">{{ recipe.content | markdownify | strip_html | truncatewords: 20 }}</p>
+    </a>
+    {% endfor %}
+  </div>
 </div>
+<script>
+  $('.recipe-filter').on('click', function() {
+    var filter = $(this).data('filter');
+    $('.recipe-filter').removeClass('active');
+    $(this).addClass('active');
+    if (filter === 'all') {
+      $('.recipe-card').show();
+    } else {
+      $('.recipe-card').each(function() {
+        var tags = ($(this).data('tags') || '').split(' ');
+        $(this).toggle(tags.indexOf(filter) !== -1);
+      });
+    }
+  });
+</script>

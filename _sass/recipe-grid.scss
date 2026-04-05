@@ -1,0 +1,130 @@
+.recipe-card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.recipe-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	text-decoration: none;
+	border: 1px solid rgba(38, 70, 83, 0.15);
+	border-radius: 8px;
+	padding: 1.1rem 1.2rem;
+	transition: border-color 0.2s;
+
+	&:hover {
+		border-color: $color-aqua;
+	}
+}
+
+.recipe-card__title {
+	font-family: contentbold;
+	font-size: 1rem;
+	color: $color-navy;
+	margin: 0;
+}
+
+.recipe-card__meta {
+	font-family: content;
+	font-size: 0.8rem;
+	color: $color-navy;
+	opacity: 0.5;
+}
+
+.recipe-card__excerpt {
+	font-family: content;
+	font-size: 0.85rem;
+	color: $color-navy;
+	opacity: 0.7;
+	line-height: 1.5;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.recipe-card-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+// Individual recipe page layout
+.recipe-body-layout {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 2.5rem;
+	margin-top: 0.5rem;
+}
+
+.recipe-section-label {
+	font-family: contentbold;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: $color-navy;
+	opacity: 0.45;
+	margin: 0 0 0.75rem 0;
+}
+
+.recipe-ingredients ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.recipe-ingredients li {
+	padding: 0.35rem 0;
+	border-bottom: 1px solid rgba(38, 70, 83, 0.08);
+	font-size: 0.9rem;
+	line-height: 1.4;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.recipe-instructions ol {
+	padding-left: 1.2rem;
+	margin: 0;
+}
+
+.recipe-instructions li {
+	padding: 0.3rem 0;
+	line-height: 1.65;
+}
+
+// Filter bar on index
+.recipe-filter-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1.25rem 0 0 0;
+}
+
+.recipe-filter {
+	font-family: contentbold;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: $color-navy;
+	background: transparent;
+	border: 1px solid rgba(38, 70, 83, 0.2);
+	border-radius: 4px;
+	padding: 0.3rem 0.7rem;
+	cursor: pointer;
+	transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+	&:hover, &.active {
+		background: $color-navy;
+		border-color: $color-navy;
+		color: $color-white;
+	}
+}
+
+@media (max-width: 768px) {
+	.recipe-body-layout {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+}
