@@ -1,28 +1,145 @@
 ---
 layout: default
 ---
-<head>
-	<link rel="preload" href="https://open.spotify.com/embed/playlist/1TWY5FNalizgBKaoQAUDGX" as="media">
-</head>
-<div class="box content">
-	<h1 class="text-regular navy">Playlists</h1>
-	<hr>
-	<br>
-	{% assign sorted_playlists = site.playlists | sort: 'order' %}
-	<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
-			<h2 id="big-name" class="navy">Welcome to my playlist collection!</h2>
-			I've been curating my playlists since college. Songs from friends, family, and random encounters. I hope you enjoy!
-		</div>
-		{% for playlist in sorted_playlists %}
-		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%; max-width: 100%; overflow: hidden;">
-			<h2 id="big-name">
-			 <span class="text-regular navy">{{ playlist.title }}</span>
-			 <spam class="text-regular"> | </spam>
-			 <span class="text-regular orange">{{ playlist.story }}</span>
-			</h2>
-			{{ playlist.embed }}
-		</div>
-		{% endfor %}
-	</div>
+<div class="box content playlist-page">
+  <div class="playlist-header">
+    <h1 class="navy">Playlists</h1>
+    <hr>
+    <p>Playlists I've curated since college — songs from friends, strangers, and moments in between. Scroll to travel through time.</p>
+  </div>
+
+  <div class="playlist-timeline-outer" id="timeline-outer">
+    <div class="playlist-timeline-inner" id="timeline-inner">
+      <svg class="timeline-svg" id="timeline-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      {% assign sorted_playlists = site.playlists | sort: 'order' %}
+      {% for playlist in sorted_playlists %}
+      {% assign embed_parts = playlist.embed | split: "playlist/" %}
+      {% assign spotify_id = embed_parts[1] | split: '"' | first | split: '?' | first %}
+      <div class="timeline-stop" data-index="{{ forloop.index0 }}">
+        <div class="timeline-stop__card">
+          <div class="timeline-stop__header">
+            <span class="timeline-stop__title">{{ playlist.title }}</span>
+            {% if playlist.story %}
+            <span class="timeline-stop__story">{{ playlist.story }}</span>
+            {% endif %}
+          </div>
+          <div class="timeline-stop__embed">
+            <button class="spotify-placeholder" data-spotify-id="{{ spotify_id }}" aria-label="Load {{ playlist.title }}">
+              <img src="/assets/images/playlists/{{ spotify_id }}.jpg" alt="{{ playlist.title }}" class="spotify-placeholder__cover">
+              <div class="spotify-placeholder__overlay">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="18" fill="rgba(0,0,0,0.45)"/>
+                  <path d="M14 11l13 7-13 7V11z" fill="white"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
 </div>
+
+<script>
+(function () {
+  var Y_POS = [
+    0.38, 0.68, 0.28, 0.72, 0.42, 0.62, 0.22, 0.75,
+    0.48, 0.32, 0.70, 0.25, 0.62, 0.35, 0.78, 0.45, 0.65, 0.30
+  ];
+
+  var H     = 560;
+  var STEP  = 380;
+  var PAD_X = 180;
+
+  var outer = document.getElementById('timeline-outer');
+  var inner = document.getElementById('timeline-inner');
+  var stops = document.querySelectorAll('.timeline-stop');
+  var n     = stops.length;
+  var W     = PAD_X * 2 + (n - 1) * STEP;
+
+  inner.style.height = H + 'px';
+  inner.style.width  = W + 'px';
+
+  var points = [];
+
+  stops.forEach(function (stop, i) {
+    var yRatio = Y_POS[i] !== undefined ? Y_POS[i] : 0.5;
+    var x = PAD_X + i * STEP;
+    var y = yRatio * H;
+    points.push({ x: x, y: y });
+
+    stop.style.left = x + 'px';
+    stop.style.top  = y + 'px';
+
+    var card = stop.querySelector('.timeline-stop__card');
+    card.classList.add(yRatio < 0.5 ? 'card--below' : 'card--above');
+  });
+
+  // SVG path
+  var svg = document.getElementById('timeline-svg');
+  svg.setAttribute('width',   W);
+  svg.setAttribute('height',  H);
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+  var d = 'M ' + points[0].x + ',' + points[0].y;
+  for (var i = 1; i < points.length; i++) {
+    var p0 = points[i - 1], p1 = points[i];
+    var cx = (p1.x - p0.x) * 0.45;
+    d += ' C ' + (p0.x + cx) + ',' + p0.y + ' ' + (p1.x - cx) + ',' + p1.y + ' ' + p1.x + ',' + p1.y;
+  }
+
+  var ns   = 'http://www.w3.org/2000/svg';
+  var path = document.createElementNS(ns, 'path');
+  path.setAttribute('d', d);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', '#264653');
+  path.setAttribute('stroke-width', '1.5');
+  path.setAttribute('stroke-opacity', '0.2');
+  svg.appendChild(path);
+
+  points.forEach(function (p) {
+    var c = document.createElementNS(ns, 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y);
+    c.setAttribute('r', '5');
+    c.setAttribute('fill', '#2a9d8f');
+    c.setAttribute('fill-opacity', '0.65');
+    svg.appendChild(c);
+  });
+
+  // Click-to-load: replace placeholder button with iframe on click
+  document.querySelectorAll('.spotify-placeholder').forEach(function (placeholder) {
+    placeholder.addEventListener('click', function () {
+      var id = placeholder.getAttribute('data-spotify-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://open.spotify.com/embed/playlist/' + id;
+      iframe.width = '100%';
+      iframe.height = '152';
+      iframe.frameBorder = '0';
+      iframe.setAttribute('allowtransparency', 'true');
+      iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+      iframe.style.borderRadius = '6px';
+      iframe.style.display = 'block';
+      placeholder.parentNode.replaceChild(iframe, placeholder);
+    });
+  });
+
+  // Drag-to-scroll
+  var isDown = false, startX = 0, scrollLeft = 0;
+  outer.addEventListener('mousedown', function (e) {
+    isDown = true;
+    outer.classList.add('is-dragging');
+    startX = e.pageX - outer.offsetLeft;
+    scrollLeft = outer.scrollLeft;
+  });
+  outer.addEventListener('mouseleave', function () { isDown = false; outer.classList.remove('is-dragging'); });
+  outer.addEventListener('mouseup',    function () { isDown = false; outer.classList.remove('is-dragging'); });
+  outer.addEventListener('mousemove',  function (e) {
+    if (!isDown) return;
+    e.preventDefault();
+    outer.scrollLeft = scrollLeft - (e.pageX - outer.offsetLeft - startX) * 1.5;
+  });
+}());
+</script>

@@ -27,12 +27,18 @@
 - [x] Equipment field added (`equipment:` frontmatter, shown in meta line)
 
 ## Playlists — Journey Timeline
-- [ ] Redesign the playlist page as an interactive horizontal scroll — each playlist is a stop on a continuous winding path
-- [ ] The path should meander up and down organically (SVG or CSS-drawn line), loosely mimicking the rhythm of a life lived — not perfectly straight, not random noise
-- [ ] Each stop on the line: playlist title, Spotify embed, and 1–2 sentences of personal context for that playlist
-- [ ] Add bullet-point "life events" scattered along the path between playlists (e.g. "started college", "moved to NYC") as small labeled markers
-- [ ] Add more playlists with personal descriptions to populate the timeline — currently `_playlists/` has entries but most lack a `description` field; add that to the frontmatter schema
-- [ ] Mobile: collapse to vertical scroll with the same winding-path aesthetic
+- [x] Redesign the playlist page as an interactive horizontal scroll with winding SVG path
+- [x] JS draws a smooth cubic bezier path connecting all stops; dots rendered in SVG
+- [x] Each stop: playlist title, story text, compact Spotify embed (152px); drag-to-scroll on desktop
+- [x] Mobile: collapses to vertical stack (SVG hidden, cards full-width)
+- [ ] Add bullet-point "life events" along the path between playlists (e.g. "started college", "moved to NYC")
+- [ ] Add personal descriptions to playlist frontmatter (`description` field) — currently only `story` exists (short labels)
+
+## Wiki Page
+- [ ] Speed up wiki card hover animation — current transition feels slow/clunky
+- [ ] Make wiki cards equidistant — spacing is uneven across different screen widths
+- [ ] Add TV and Board Games sections to wiki (create `_wiki/tv.md` and `_wiki/boardgames.md`)
+- [ ] Consider adding Books, Thoughts, Recipes, Playlists, Code cards too so wiki is a complete index
 
 ## Design & Usability
 - [ ] Run a dedicated Claude Code session to review and improve overall visual flow, typography, spacing, and presentation across all collection types

@@ -41,17 +41,24 @@ layout: default
   </div>
 </div>
 <script>
-  $('.recipe-filter').on('click', function() {
-    var filter = $(this).data('filter');
-    $('.recipe-filter').removeClass('active');
-    $(this).addClass('active');
-    if (filter === 'all') {
-      $('.recipe-card').show();
-    } else {
-      $('.recipe-card').each(function() {
-        var tags = ($(this).data('tags') || '').split(' ');
-        $(this).toggle(tags.indexOf(filter) !== -1);
+  document.addEventListener('DOMContentLoaded', function() {
+    var filters = document.querySelectorAll('.recipe-filter');
+    var cards   = document.querySelectorAll('.recipe-card');
+
+    filters.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+        filters.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        cards.forEach(function(card) {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            var tags = (card.getAttribute('data-tags') || '').split(' ');
+            card.style.display = tags.indexOf(filter) !== -1 ? '' : 'none';
+          }
+        });
       });
-    }
+    });
   });
 </script>
