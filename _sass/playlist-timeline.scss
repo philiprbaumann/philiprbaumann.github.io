@@ -14,31 +14,55 @@
   }
 }
 
+// ─── Section jump bar ─────────────────────────────────────────────────────────
+
+.section-jump-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  width: fit-content;
+  margin: 0 auto;
+  background: rgba(247, 247, 245, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(38, 70, 83, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(38, 70, 83, 0.08);
+}
+
+.section-jump-bar__label {
+  font-family: contentlight;
+  font-size: 0.75rem;
+  color: rgba(38, 70, 83, 0.45);
+  margin-right: 0.25rem;
+}
+
+.section-jump-btn {
+  font-family: content;
+  font-size: 0.78rem;
+  color: #264653;
+  background: none;
+  border: 1px solid rgba(38, 70, 83, 0.18);
+  border-radius: 20px;
+  padding: 0.25rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: rgba(38, 70, 83, 0.06);
+    border-color: rgba(38, 70, 83, 0.35);
+  }
+}
+
 // ─── Timeline outer ───────────────────────────────────────────────────────────
 
 .playlist-timeline-outer {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  cursor: grab;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
   padding-bottom: 20px;
-
-  &.is-dragging {
-    cursor: grabbing;
-    user-select: none;
-  }
-
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(38, 70, 83, 0.15);
-    border-radius: 2px;
-  }
 }
 
 // ─── Timeline inner (width + height set by JS) ────────────────────────────────
@@ -56,6 +80,26 @@
   pointer-events: none;
 }
 
+// ─── Section labels ───────────────────────────────────────────────────────────
+
+.timeline-section-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: center;
+  font-family: contentbold;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  pointer-events: none;
+  line-height: 1;
+  background: $color-white;
+  padding: 0.2rem 0.75rem;
+  border-radius: 12px;
+}
+
 // ─── Stop ─────────────────────────────────────────────────────────────────────
 
 .timeline-stop {
@@ -67,23 +111,25 @@
 
 .timeline-stop__card {
   position: absolute;
-  width: 260px;
+  width: 320px;
   background: $color-white;
   border: 1px solid rgba(38, 70, 83, 0.12);
   border-radius: 10px;
   padding: 0.85rem 1rem;
   box-shadow: 0 2px 14px rgba(38, 70, 83, 0.07);
 
-  &.card--above {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+  // vertical timeline: card to the right of the dot
+  &.card--right {
+    left: 28px;
+    top: 0;
+    transform: translateY(-50%);
   }
 
-  &.card--below {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+  // vertical timeline: card to the left of the dot
+  &.card--left {
+    left: -28px;
+    top: 0;
+    transform: translate(-100%, -50%);
   }
 }
 
@@ -97,6 +143,17 @@
   font-size: 0.88rem;
   color: $color-navy;
   margin-bottom: 0.2rem;
+}
+
+.timeline-stop__description {
+  display: block;
+  font-family: content;
+  font-size: 0.72rem;
+  color: $color-navy;
+  opacity: 0.6;
+  font-style: italic;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
 }
 
 .timeline-stop__story {
@@ -153,13 +210,62 @@
   transition: background 0.2s;
 }
 
+// ─── Minimap ──────────────────────────────────────────────────────────────────
+
+.timeline-minimap {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 80vw;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(38, 70, 83, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 2px 16px rgba(38, 70, 83, 0.1);
+  z-index: 20;
+}
+
+.minimap-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s, transform 0.15s;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
 // ─── Mobile: vertical stack ───────────────────────────────────────────────────
 
 @media (max-width: 768px) {
+  .section-jump-bar {
+    padding: 0.4rem 0.85rem;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    top: 8px;
+  }
+
+  .section-jump-btn {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.65rem;
+  }
+
   .playlist-timeline-outer {
     overflow: visible;
     cursor: default;
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .playlist-timeline-inner {
@@ -168,24 +274,35 @@
     position: static;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    padding: 1rem 0;
+    gap: 0;
+    padding: 0.5rem 0 2rem;
   }
 
   .timeline-svg {
     display: none;
   }
 
+  .timeline-section-label {
+    display: none;
+  }
+
   .timeline-stop {
     position: static !important;
     transform: none !important;
+    margin-bottom: 1rem;
   }
 
   .timeline-stop__card {
     position: static !important;
     transform: none !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box;
     box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .timeline-minimap {
+    display: none;
   }
 }

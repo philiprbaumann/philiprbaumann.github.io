@@ -1,4 +1,5 @@
 ---
+timeline_date: "2015-09"
 title: goodgood
 section: College
 embed: '<iframe class="playlist" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1TWY5FNalizgBKaoQAUDGX?utm_source=generator" width="100%" height="380" frameborder="0" allowfullscreen="" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>'
