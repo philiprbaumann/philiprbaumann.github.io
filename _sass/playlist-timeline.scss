@@ -263,9 +263,11 @@
   }
 
   .playlist-timeline-outer {
-    overflow: visible;
+    overflow-x: hidden;
     cursor: default;
     padding: 0 16px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .playlist-timeline-inner {
@@ -290,6 +292,8 @@
     position: static !important;
     transform: none !important;
     margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .timeline-stop__card {

@@ -1,8 +1,15 @@
 .resume {
     width: 70vw;
-    height: 100vw;
+    height: 85vh;
     margin: 0 auto;
 	display: block;
 	padding-top: 3vh;
 	padding-bottom: 3vh;
+}
+
+@media only screen and (max-width: 768px) {
+	.resume {
+		width: 95vw;
+		height: 75vh;
+	}
 }

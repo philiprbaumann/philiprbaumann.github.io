@@ -3,11 +3,12 @@
 <head>
 	{% include title.html %}
 	{% include head.html %}
+	<link rel="preload" as="image" href="/assets/images/garden-background.jpg">
 </head>
 <body>
 	<div class="wrapper">
 		{% include main-navigation.html %}
-		<div class="background-image content">
+		<div class="background-image content" id="bg-image">
 			{% include about.html %}
 		</div>
 		{% include jquery.html %}
