@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Speed"
 rating: 4/10
 ---

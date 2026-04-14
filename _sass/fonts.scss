@@ -1,16 +1,27 @@
+// Override FontAwesome font-display so icons block until the font is ready
+// (prevents the flash where icons briefly appear as blank boxes)
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+	     url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
 @font-face {
 	font-family: "content";
-	src: url("../fonts/IBMPlexMono-Regular.ttf");
+	src: url("../fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
 	font-family: "contentbold";
-	src: url("../fonts/IBMPlexMono-Bold.ttf");
+	src: url("../fonts/OpenSans-Bold.ttf");
 }
 
 @font-face {
 	font-family: "contentlight";
-	src: url("../fonts/IBMPlexMono-Light.ttf");
+	src: url("../fonts/OpenSans-Light.ttf");
 }
 
 @font-face {
@@ -21,6 +32,11 @@
 @font-face {
 	font-family: "bigname";
 	src: url("../fonts/RobotoSlab-Bold.ttf");
+}
+
+@font-face {
+	font-family: "mono";
+	src: url("../fonts/IBMPlexMono-Regular.ttf");
 }
 
 .text-light {

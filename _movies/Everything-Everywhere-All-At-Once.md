@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Everything Everywhere All at Once"
 rating: 10/10
 ---

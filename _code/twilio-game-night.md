@@ -1,5 +1,4 @@
 ---
-layout: code
 title:  Twilio Game Night
 date: 2021-01-10
 ---

@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "This Place Rules"
 rating: 7/10
 ---

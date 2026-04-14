@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Rush"
 rating: 7/10
 ---

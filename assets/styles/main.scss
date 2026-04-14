@@ -7,13 +7,14 @@
 @import "grid";
 @import "about-grid";
 @import "movie-grid";
-@import "thought-grid";
+// @import "thought-grid"; // removed — layout migrated to single-page
 @import "music-grid";
 @import "wiki-list";
 @import "code-highlight";
 @import "resume";
 @import "site-image";
 @import "playlist-timeline";
+@import "recipe-grid";
 
 // Your styles start here
 body {
@@ -25,16 +26,48 @@ body {
 	height: 100%;
 }
 
+code, pre, kbd, samp {
+	font-family: mono;
+}
+
 head {
 	background: $color-white;
 	font-family: title;
 }
 
-p {
+p, li {
 	color: $color-navy;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	line-height: 1.6;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	line-height: 1.75;
+	font-size: 16px;
+}
+
+@media (max-width: 768px) {
+	p {
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	h1 {
+		font-size: 1.6rem;
+	}
+
+	h2 {
+		font-size: 1.1rem;
+	}
+
+	.entry-list__item {
+		padding: 1.25rem 0;
+	}
+
+	.single-page {
+		max-width: 100%;
+	}
+
+	.collection-index {
+		max-width: 100%;
+	}
 }
 
 .outer-center {
@@ -71,17 +104,15 @@ p {
 }
 
 .border {
-	border: 2px dashed $color-blood;
-	opacity: .90;
-	border-radius: 1vw;
+	border: 1px solid rgba(38, 70, 83, 0.15);
+	border-radius: 8px;
 }
 
 hr {
-	height: 2px;
+	height: 1px;
 	width: 100%;
-	opacity: .75;
 	border: none;
-	border-top: 2px dashed $color-blood;
+	border-top: 1px solid rgba(38, 70, 83, 0.15);
 }
 
 .main-navigation-home {
@@ -98,28 +129,67 @@ hr {
 .main-navigation__item {
 	display: inline-flex;
     justify-content: space-around;
+    align-items: center;
     margin: 0;
     text-align: center;
     width: 11vw;
-    min-width: 108px;
+    min-width: 80px;
 	position: relative;
   	overflow: hidden;
-  	text-decoration: underline;
-  	background-color: rgba(255, 255, 255, .9);
-  	border: rgba(255, 255, 255, 0.2) solid;
-  	height: 30px;
-  	font-size: 20px;
+  	text-decoration: none;
+  	background-color: transparent;
+  	border: none;
+  	min-height: 44px;
+  	font-size: 15px;
+  	font-family: contentbold;
+  	letter-spacing: 0.04em;
+  	text-transform: uppercase;
+  	color: $color-navy;
 }
 
-@media only screen and (max-width: 500px) {
-	.main-navigation__item {
+.nav-hamburger {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 26px;
+	cursor: pointer;
+	color: $color-navy;
+	min-height: 44px;
+	padding: 0 10px;
+	line-height: 1;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	.nav-hamburger {
 		display: block;
-		margin: 2vh auto auto auto;
 	}
 
 	.main-navigation {
-		display: block;
-		margin: auto;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.nav-links.open {
+		display: flex;
+	}
+
+	.main-navigation__item {
+		width: 100%;
+		min-width: unset;
+		justify-content: center;
 	}
 }
 
@@ -128,13 +198,14 @@ hr {
 }
 
 .main-navigation a:hover {
-	background-color: $color-aqua;
-	color: $color-white;
+	background-color: transparent;
+	color: $color-aqua;
 }
 
 .main-navigation a.active {
-	background-color: $color-aqua;
-	color: $color-white;
+	background-color: transparent;
+	color: $color-aqua;
+	border-bottom: 2px solid $color-aqua;
 }
 
 .main-card {
@@ -142,48 +213,163 @@ hr {
 	padding: 0px 15px 15px 15px;
 }
 
+// Collection index pages (thoughts, books)
+.collection-index {
+	max-width: 720px;
+}
+
+.entry-list {
+	list-style: none;
+	padding: 0;
+	margin: 2rem 0 0 0;
+}
+
+.entry-list__item {
+	padding: 1.75rem 0;
+	border-bottom: 1px solid rgba(38, 70, 83, 0.1);
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.entry-list__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.entry-list__title {
+	font-family: contentbold;
+	font-size: 1.05rem;
+	text-decoration: none;
+	color: $color-navy;
+
+	&:hover {
+		color: $color-aqua;
+	}
+}
+
+.entry-list__date {
+	font-family: content;
+	font-size: 0.8rem;
+	color: $color-navy;
+	opacity: 0.5;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.entry-list__meta {
+	font-family: contentlight;
+	font-size: 0.8rem;
+	color: $color-navy;
+	opacity: 0.6;
+	flex-shrink: 0;
+}
+
+.entry-list__excerpt {
+	font-size: 0.9rem;
+	color: $color-navy;
+	opacity: 0.75;
+	margin: 0;
+	line-height: 1.6;
+}
+
+// Individual thought/book pages
+.single-page {
+	max-width: 680px;
+}
+
+.back-link {
+	display: inline-block;
+	font-family: content;
+	font-size: 0.85rem;
+	color: $color-navy;
+	opacity: 0.5;
+	text-decoration: none;
+	margin-bottom: 1.5rem;
+
+	&:hover {
+		opacity: 1;
+		color: $color-aqua;
+	}
+}
+
+.single-page__date {
+	font-size: 0.85rem;
+	color: $color-navy;
+	opacity: 0.5;
+	margin: 0.25rem 0 1rem 0;
+}
+
+.single-page__author {
+	font-size: 0.95rem;
+	color: $color-navy;
+	opacity: 0.65;
+	font-family: contentlight;
+	margin: 0.25rem 0 1rem 0;
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-bottom: 0.6rem;
+}
+
+.tag {
+	font-family: contentbold;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: $color-navy;
+	background: rgba(38, 70, 83, 0.07);
+	border-radius: 4px;
+	padding: 0.2rem 0.5rem;
+}
+
 .footer-ul, .footer-li {
     list-style: none;
 }
 
 .footer-ul {
-	align-content: center;
-	display: inline-flex;
-	justify-content: space-around;
-	outline: 2px solid $color-blue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
 }
 
 .footer-li {
 	display: inline-flex;
-	justify-content: space-around;
-	text-align: center;
-	padding: 3vh;
-	position: relative;
-	overflow: hidden;
-	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	text-decoration: none;
-	width: 10vw;
-	outline: 2px solid $color-blue;
-	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-	border-radius: 25vw; 
+	width: 40px;
+	height: 40px;
+	position: relative;
+	border: 1px solid rgba(38, 70, 83, 0.25);
+	border-radius: 50%;
+	transition: border-color 0.2s, color 0.2s;
 }
 
 a:link.footer-li {
-	color: $color-teal;
+	color: $color-navy;
 }
 
-a:visited.footer-li  {
-	color: $color-teal;
+a:visited.footer-li {
+	color: $color-navy;
 }
 
-a:hover.footer-li  {
-	color: $color-blue;
-	background-color: $color-tan;
+a:hover.footer-li {
+	color: $color-aqua;
+	border-color: $color-aqua;
 }
 
 i.footer-icon {
-	font-size: 3vh; 
-	padding: 1px;
+	font-size: 20px;
+	padding: 0;
 	position: absolute;
 	top: 50%;
 	left: 50%;

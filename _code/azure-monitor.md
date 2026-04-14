@@ -1,5 +1,4 @@
 ---
-layout: code
 title:  Azure Monitor
 date: 2023-02-08
 ---

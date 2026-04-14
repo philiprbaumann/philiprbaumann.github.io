@@ -1,28 +1,221 @@
 ---
 layout: default
 ---
-<head>
-	<link rel="preload" href="https://open.spotify.com/embed/playlist/1TWY5FNalizgBKaoQAUDGX" as="media">
-</head>
-<div class="box content">
-	<h1 class="text-regular navy">Playlists</h1>
-	<hr>
-	<br>
-	{% assign sorted_playlists = site.playlists | sort: 'order' %}
-	<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
-			<h2 id="big-name" class="navy">Welcome to my playlist collection!</h2>
-			I've been curating my playlists since college. Songs from friends, family, and random encounters. I hope you enjoy!
-		</div>
-		{% for playlist in sorted_playlists %}
-		<div style="flex: 1 0 auto; padding-bottom: 5vw; width: 100%;">
-			<h2 id="big-name">
-			 <span class="text-regular navy">{{ playlist.title }}</span>
-			 <spam class="text-regular"> | </spam>
-			 <span class="text-regular orange">{{ playlist.story }}</span>
-			</h2>
-			{{ playlist.embed }}
-		</div>
-		{% endfor %}
-	</div>
+<div class="box content playlist-page">
+  <div class="playlist-header">
+    <h1 class="navy">/playlists</h1>
+    <hr>
+    <p>Playlists I've curated since college — songs from friends, strangers, and moments in between. Scroll to travel through time.</p>
+  </div>
+
+  <div class="section-jump-bar">
+    <span class="section-jump-bar__label">Jump to</span>
+    <button class="section-jump-btn" data-section="College">College</button>
+    <button class="section-jump-btn" data-section="California">California</button>
+    <button class="section-jump-btn" data-section="COVID">COVID</button>
+    <button class="section-jump-btn" data-section="NYC">NYC</button>
+  </div>
+
+  <div class="playlist-timeline-outer" id="timeline-outer">
+    <div class="playlist-timeline-inner" id="timeline-inner">
+      <svg class="timeline-svg" id="timeline-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      {% assign sorted_playlists = site.playlists | sort: 'order' %}
+      {% for playlist in sorted_playlists %}
+      {% assign embed_parts = playlist.embed | split: "playlist/" %}
+      {% assign spotify_id = embed_parts[1] | split: '"' | first | split: '?' | first %}
+      <div class="timeline-stop" data-index="{{ forloop.index0 }}" data-date="{{ playlist.timeline_date }}" data-section="{{ playlist.section }}">
+        <div class="timeline-stop__card">
+          <div class="timeline-stop__header">
+            <span class="timeline-stop__title">{{ playlist.title }}</span>
+            {% if playlist.description %}
+            <span class="timeline-stop__description">{{ playlist.description }}</span>
+            {% endif %}
+            {% if playlist.story %}
+            <span class="timeline-stop__story">{{ playlist.story }}</span>
+            {% endif %}
+          </div>
+          <div class="timeline-stop__embed">
+            <button class="spotify-placeholder" data-spotify-id="{{ spotify_id }}" aria-label="Load {{ playlist.title }}">
+              <img src="/assets/images/playlists/{{ spotify_id }}.jpg" alt="{{ playlist.title }}" class="spotify-placeholder__cover">
+              <div class="spotify-placeholder__overlay">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="18" fill="rgba(0,0,0,0.45)"/>
+                  <path d="M14 11l13 7-13 7V11z" fill="white"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <div class="timeline-minimap" id="timeline-minimap"></div>
 </div>
+
+<script>
+(function () {
+  // ── Config ────────────────────────────────────────────────────────────────────
+  var CARD_W   = 320;
+  var PAD_Y    = 60;    // top padding before first card
+  var SECT_GAP = 80;    // extra space inserted before each new section label
+  var LABEL_H  = 140;   // space for label + room for first card's top half to clear it
+
+  // Varying vertical gaps between cards
+  var Y_STEPS = [300, 380, 260, 420, 310, 350, 280, 400, 330, 370, 250, 390, 295, 360, 315];
+
+  var SECTION_COLORS = {
+    'College':    '#2a9d8f',
+    'California': '#e9c46a',
+    'COVID':      '#e76f51',
+    'NYC':        '#264653'
+  };
+
+  // ── Elements ──────────────────────────────────────────────────────────────────
+  var inner   = document.getElementById('timeline-inner');
+  var svg     = document.getElementById('timeline-svg');
+  var stops   = Array.prototype.slice.call(document.querySelectorAll('.timeline-stop'));
+  var minimap = document.getElementById('timeline-minimap');
+
+  var W       = inner.offsetWidth || 900;
+  var centerX = W / 2;
+  var ns      = 'http://www.w3.org/2000/svg';
+
+  // Scale horizontal offsets to viewport so cards never overflow
+  var maxOffset  = Math.min(160, Math.max(20, centerX - CARD_W - 40));
+  var X_OFFSETS_BASE = [90, -70, 130, -110, 50, -95, 120, -55, 100, -125, 40, -80, 115, -45, -90, 65, -115, 85, -35, 75];
+  var X_OFFSETS = X_OFFSETS_BASE.map(function (v) { return Math.round(v * maxOffset / 130); });
+
+  // ── Position each stop sequentially down the page ────────────────────────────
+  var currentY    = PAD_Y;
+  var prevSection = null;
+  var sectionTopY = {};
+  var points      = [];
+
+  stops.forEach(function (stop, i) {
+    var sec = stop.getAttribute('data-section') || '';
+
+    if (sec !== prevSection) {
+      if (prevSection !== null) currentY += SECT_GAP;
+      sectionTopY[sec] = currentY;
+
+      var lbl = document.createElement('div');
+      lbl.className   = 'timeline-section-label';
+      lbl.textContent = sec;
+      lbl.style.top   = currentY + 'px';
+      lbl.style.color = SECTION_COLORS[sec] || '#264653';
+      inner.appendChild(lbl);
+
+      currentY += LABEL_H;
+      prevSection = sec;
+    }
+
+    var x = centerX + X_OFFSETS[i % X_OFFSETS.length];
+    var y = currentY;
+
+    stop.style.left = x + 'px';
+    stop.style.top  = y + 'px';
+
+    var card = stop.querySelector('.timeline-stop__card');
+    card.classList.remove('card--above', 'card--below', 'card--left', 'card--right');
+    card.classList.add(i % 2 === 0 ? 'card--right' : 'card--left');
+
+    points.push({ x: x, y: y, section: sec });
+    currentY += Y_STEPS[i % Y_STEPS.length];
+  });
+
+  // ── Size container ────────────────────────────────────────────────────────────
+  var TAIL = 400;   // how far the path extends below the last dot
+  var totalH = currentY + TAIL + 40;
+  inner.style.width  = W + 'px';
+  inner.style.height = totalH + 'px';
+  svg.setAttribute('width',   W);
+  svg.setAttribute('height',  totalH);
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + totalH);
+
+  // ── SVG: path ────────────────────────────────────────────────────────────────
+  var pathEl = document.createElementNS(ns, 'path');
+  var d = 'M ' + points[0].x + ',' + points[0].y;
+  for (var i = 1; i < points.length; i++) {
+    var p0 = points[i - 1], p1 = points[i];
+    var midY = (p0.y + p1.y) / 2;
+    d += ' C ' + p0.x + ',' + midY + ' ' + p1.x + ',' + midY + ' ' + p1.x + ',' + p1.y;
+  }
+  // Tail: path continues past the last dot and fades into the unknown
+  var lp = points[points.length - 1];
+  var tail = [
+    { x: lp.x + 60,  y: lp.y + TAIL * 0.28 },
+    { x: lp.x - 40,  y: lp.y + TAIL * 0.55 },
+    { x: lp.x + 20,  y: lp.y + TAIL * 0.80 },
+    { x: lp.x - 10,  y: lp.y + TAIL }
+  ];
+  var prev = lp;
+  tail.forEach(function (tp) {
+    var midY = (prev.y + tp.y) / 2;
+    d += ' C ' + prev.x + ',' + midY + ' ' + tp.x + ',' + midY + ' ' + tp.x + ',' + tp.y;
+    prev = tp;
+  });
+  pathEl.setAttribute('d', d);
+  pathEl.setAttribute('fill', 'none');
+  pathEl.setAttribute('stroke', '#264653');
+  pathEl.setAttribute('stroke-width', '1.5');
+  pathEl.setAttribute('stroke-opacity', '0.2');
+  svg.appendChild(pathEl);
+
+  points.forEach(function (p) {
+    var c = document.createElementNS(ns, 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', '5');
+    c.setAttribute('fill', SECTION_COLORS[p.section] || '#2a9d8f');
+    c.setAttribute('fill-opacity', '0.7');
+    svg.appendChild(c);
+  });
+
+  // ── Spotify click-to-load ────────────────────────────────────────────────────
+  document.querySelectorAll('.spotify-placeholder').forEach(function (placeholder) {
+    placeholder.addEventListener('click', function () {
+      var id = placeholder.getAttribute('data-spotify-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://open.spotify.com/embed/playlist/' + id;
+      iframe.width = '100%';
+      iframe.height = '152';
+      iframe.frameBorder = '0';
+      iframe.setAttribute('allowtransparency', 'true');
+      iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+      iframe.style.borderRadius = '6px';
+      iframe.style.display = 'block';
+      placeholder.parentNode.replaceChild(iframe, placeholder);
+    });
+  });
+
+  // ── Jump bar ──────────────────────────────────────────────────────────────────
+  document.querySelectorAll('.section-jump-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var sec = btn.getAttribute('data-section');
+      if (sec in sectionTopY) {
+        var top = inner.getBoundingClientRect().top + window.pageYOffset + sectionTopY[sec] - 72;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Minimap ───────────────────────────────────────────────────────────────────
+  if (minimap) {
+    stops.forEach(function (stop) {
+      var dot = document.createElement('button');
+      dot.className = 'minimap-dot';
+      var sec = stop.getAttribute('data-section') || '';
+      dot.style.background = SECTION_COLORS[sec] || '#999';
+      var t = stop.querySelector('.timeline-stop__title');
+      if (t) dot.title = t.textContent;
+      dot.addEventListener('click', function () {
+        stop.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      minimap.appendChild(dot);
+    });
+  }
+
+}());
+</script>

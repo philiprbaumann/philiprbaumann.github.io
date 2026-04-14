@@ -13,14 +13,45 @@
 	row-gap: 2vh;
 	height: auto;
 	grid-template-columns: auto auto auto;
-	justify-content: space-between
+	justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+	.image-site-wrapper {
+		grid-template-columns: 1fr;
+		justify-content: center;
+	}
+
+	.site-image {
+		max-width: 100%;
+		max-height: none;
+		width: 100%;
+	}
 }
 
 .background-image {
-	background-image: url("../images/garden-background.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 100%;
+	position: relative;
 	min-height: 100vh;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url("../images/garden-background.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		z-index: 0;
+		animation: bgFadeIn 2.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+@keyframes bgFadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
 }

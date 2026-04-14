@@ -1,5 +1,5 @@
 ---
-layout: playlist
+timeline_date: "2017-04"
 title: fighter jets
 section: College
 embed: '<iframe class="playlist" src="about:blank" data-src="https://open.spotify.com/embed/playlist/5RGAVWIIX3rcLuP7LXOFVK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'

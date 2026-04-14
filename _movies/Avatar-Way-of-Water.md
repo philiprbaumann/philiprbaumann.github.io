@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Avatar: The Way of Water"
 rating: 1/10
 ---

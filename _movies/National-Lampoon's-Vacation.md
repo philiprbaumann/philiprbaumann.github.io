@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "National Lampoon's Vacation"
 rating: 8/10
 ---

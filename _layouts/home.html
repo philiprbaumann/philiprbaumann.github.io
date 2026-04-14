@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-	{% include title.html %}
 <head>
+	{% include title.html %}
 	{% include head.html %}
+	<link rel="preload" as="image" href="/assets/images/garden-background.jpg">
 </head>
 <body>
 	<div class="wrapper">
-		<div class="background-image wrapper">
-			{% include main-navigation.html %}
+		{% include main-navigation.html %}
+		<div class="background-image content" id="bg-image">
 			{% include about.html %}
 		</div>
 		{% include jquery.html %}
-		{% include footer.html %} 
+		{% include footer.html %}
 	</div>
 </body>
 </html>

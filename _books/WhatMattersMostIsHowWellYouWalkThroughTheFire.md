@@ -1,5 +1,4 @@
 ---
-layout: book
 title:  "What Matters Most is How Well You Walk Through the Fire"
 author: Charles Bukowski
 date: 2021-06-20

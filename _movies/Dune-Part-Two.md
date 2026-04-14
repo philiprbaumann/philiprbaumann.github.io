@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Dune: Part Two"
 rating: 9/10
 ---

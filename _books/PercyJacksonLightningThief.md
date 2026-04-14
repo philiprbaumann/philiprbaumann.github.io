@@ -1,5 +1,4 @@
 ---
-layout: book
 title:  "Percy Jackson & the Olympians: The Lightning Thief"
 author: Rick Riordan
 date: 2021-05-25

@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "The Social Network"
 rating: 8/10
 ---

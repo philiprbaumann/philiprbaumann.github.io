@@ -1,5 +1,4 @@
 ---
-layout: movie
 title:  "Justice League"
 rating: 3/10
 ---

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="box content collection-index">
+  <h1 class="navy">/boardgames</h1>
+  <hr>
+  <div class="movie-card-grid">
+    {% for game in site.boardgames %}
+    <a href="{{ game.url }}" class="movie-card">
+      <span class="movie-card__rating">{{ game.rating }}</span>
+      <h2 class="movie-card__title">{{ game.title }}</h2>
+    </a>
+    {% endfor %}
+  </div>
+</div>

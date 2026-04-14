@@ -1,34 +1,29 @@
 ---
-layout: recipe
-title:  Vegetarian Quesadillas
+title: Vegetarian Quesadillas
+time: "45 min"
+servings: 5
+tags: ["vegetarian", "quick"]
+ingredients:
+  - "1 large sweet potato"
+  - "1 red onion, diced"
+  - "Fresh cilantro"
+  - "Chili powder, cumin, onion powder"
+  - "Salt"
+  - "1 can black beans"
+  - "Frozen corn or corn salsa"
+  - "Cheese"
+  - "Flour tortillas (whole wheat preferred)"
+  - "Olive oil"
+  - "Sour cream (for topping)"
 ---
-My sister found this recipe on Pinterest and I'm a huge fan. It's pretty comparable to a normal quesadilla, except its made with sweet potatoes that adds a nice sweetness to a generally spicy and savory dish.
+My sister found this recipe on Pinterest and I'm a huge fan. It's comparable to a normal quesadilla, but made with sweet potatoes that add a nice sweetness to an otherwise spicy and savory dish. Makes 4–6 quesadillas.
 
-Ingredients - Makes 4/6 Quesadillas
- - 1 large sweet potato
- - 1 red onion
- - fresh cilantro
- - chili powder
- - salt
- - cumin
- - onion powder
- - 1 can of black beans
- - frozen corn or corn salsa
- - cheese
- - flour (I prefer whole wheat) tortillas
- - I also like some sour cream for topping
-
-Here are the steps to make them:
-
-1. Preheat the oven to 375.
-2. Dice the sweet potato into small one inch to half an inch pieces.
-3. Toss the sweet potatoes in your seasonings and olive oil.
-4. Put the sweet potatos in a glass dish or on a metal baking sheet and place them in the oven.
-5. Bake those bad boys for about thirty minutes or until they are soft to the touch. Leave that oven on when you take them out.
-6. Once these sweet potatos are complete, add them to a bowl with your black beans and corn.
-7. Season to taste and prepare to form your quesadillas. Add diced red onion to the mix.
-8. Layout the bottoms of your quesadillas.
-9. Scoop the potato, black bean, and corn mix onto the base tortilla. Add some cheese so that the tortilla sticks on both sides.
-10. Place a tortilla on top and lightly brush on some olive oil.
-11. Take them all and thrown them in the oven! I cook them for 15-18 minutes on 375.
-12. Serve with a side of salsa or sour cream and enjoy!
+1. Preheat the oven to 375°F.
+2. Dice the sweet potato into ½–1 inch pieces.
+3. Toss the sweet potatoes in seasonings and olive oil.
+4. Bake for about 30 minutes until soft to the touch. Leave the oven on.
+5. Add sweet potatoes to a bowl with black beans, corn, and diced red onion. Season to taste.
+6. Lay out the tortilla bases and scoop the filling onto each one. Add cheese so the top tortilla sticks.
+7. Place a second tortilla on top and lightly brush with olive oil.
+8. Bake for 15–18 minutes at 375°F.
+9. Serve with salsa or sour cream.

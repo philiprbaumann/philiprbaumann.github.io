@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-	{% include title.html %}
 <head>
+	{% include title.html %}
 	{% include head.html %}
 </head>
 <body>
 	<div class="wrapper">
-		<!-- <div class="background-image wrapper"> -->
-			{% include main-navigation.html %}
-			{{ content }}
-		<!-- </div> -->
+		{% include main-navigation.html %}
+		{{ content }}
 		{% include jquery.html %}
 		{% include footer.html %}
 	</div>

@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-<div class="box content">
-	<h1 class="text-regular navy">Music</h1>
-	<hr>
-	<br>
-	<ul class="music-wrapper">
-		{% for music in site.music %}
-		<li class="music-link text-regular navy">{{ music.title }}</li>
-			<div class="music-info">
-				<div class="music-text text-light"><p>{{ music.content | markdownify }}</p></div>
-			</div>
-		{% endfor %}
-	</ul>
+<div class="box content collection-index">
+  <h1 class="navy">/music</h1>
+  <hr>
+  <ul class="entry-list">
+    {% for music in site.music %}
+    <li class="entry-list__item">
+      <div class="entry-list__header">
+        <a href="{{ music.url }}" class="entry-list__title navy">{{ music.title }}</a>
+      </div>
+      <p class="entry-list__excerpt">{{ music.content | markdownify | strip_html | truncatewords: 25 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

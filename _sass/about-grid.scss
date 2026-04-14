@@ -12,23 +12,55 @@
 	grid-area: columnright;
 }
 
-.profile-picture {
-	width: 510px; 
-	height: 720px; 
-	border-radius: 100vw;
+.profile-wrapper {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	padding-bottom: 2vh;
 	padding-top: 2vh;
+	overflow: visible;
 }
 
-@media only screen and (max-width: 1200px) {
+.profile-picture {
+	width: 510px;
+	height: 720px;
+	border-radius: 100vw;
+}
+
+.profile-ring-svg {
+	position: absolute;
+	top: calc(2vh - 25px);
+	left: -40px;
+	width: 600px;
+	height: 790px;
+	pointer-events: none;
+}
+
+.profile-ring {
+}
+
+@media only screen and (max-width: 768px) {
 	.about-wrapper {
 		display: inline;
 	}
+
+	.profile-picture {
+		width: 300px;
+		height: 424px;
+	}
+
+	.profile-ring-svg {
+		width: 353px;
+		height: 464px;
+		left: -24px;
+		top: calc(2vh - 15px);
+	}
 }
 
-
 @media only screen and (max-width: 500px) {
-	.profile-picture {
+	.profile-picture,
+	.profile-wrapper {
 		display: none;
 	}
 }

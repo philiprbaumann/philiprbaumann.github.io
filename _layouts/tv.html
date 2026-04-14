@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="box content">
+  <h1 class="navy">/tv</h1>
+  <hr>
+  <div class="movie-card-grid">
+    {% for show in site.tv %}
+    <a href="{{ show.url }}" class="movie-card">
+      <span class="movie-card__rating">{{ show.rating }}</span>
+      <h2 class="movie-card__title">{{ show.title }}</h2>
+    </a>
+    {% endfor %}
+  </div>
+</div>

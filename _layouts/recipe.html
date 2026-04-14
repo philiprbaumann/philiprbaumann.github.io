@@ -2,10 +2,63 @@
 layout: default
 ---
 <div class="box content">
-	<h1 class="text-regular navy">Recipes</h1>
-	{% for recipe in site.recipes %}
-	  <hr>  
-	  <h2 class="text-regular navy">{{ recipe.title }}</h2>
-	  <p class="text-light navy">{{ recipe.content | markdownify }}</p>
-	{% endfor %}
+  <h1 class="navy">/recipes</h1>
+  <hr>
+  <div class="recipe-filter-bar">
+    <button class="recipe-filter active" data-filter="all">All</button>
+    {% assign tag_set = "" %}
+    {% for recipe in site.recipes %}
+      {% for tag in recipe.tags %}
+        {% unless tag_set contains tag %}
+          {% assign tag_set = tag_set | append: tag | append: "|" %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% assign unique_tags = tag_set | split: "|" | sort %}
+    {% for tag in unique_tags %}
+    <button class="recipe-filter" data-filter="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+  <div class="recipe-card-grid">
+    {% for recipe in site.recipes %}
+    <a href="{{ recipe.url }}" class="recipe-card" data-tags="{{ recipe.tags | join: ' ' }}">
+      <h2 class="recipe-card__title">{{ recipe.title }}</h2>
+      {% if recipe.time or recipe.servings %}
+      <span class="recipe-card__meta">
+        {% if recipe.time %}{{ recipe.time }}{% endif %}
+        {% if recipe.time and recipe.servings %} · {% endif %}
+        {% if recipe.servings %}serves {{ recipe.servings }}{% endif %}
+      </span>
+      {% endif %}
+      {% if recipe.tags %}
+      <div class="tag-list">
+        {% for tag in recipe.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+      <p class="recipe-card__excerpt">{{ recipe.content | markdownify | strip_html | truncatewords: 20 }}</p>
+    </a>
+    {% endfor %}
+  </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var filters = document.querySelectorAll('.recipe-filter');
+    var cards   = document.querySelectorAll('.recipe-card');
+
+    filters.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+        filters.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        cards.forEach(function(card) {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            var tags = (card.getAttribute('data-tags') || '').split(' ');
+            card.style.display = tags.indexOf(filter) !== -1 ? '' : 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

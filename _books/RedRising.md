@@ -1,5 +1,4 @@
 ---
-layout: book
 title:  "Red Rising"
 author: Pierce Brown
 date: 2022-01-24
