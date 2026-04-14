@@ -18,19 +18,21 @@ Personal portfolio/digital garden site built with Jekyll 4.2 (Ruby), hosted on G
 
 **Collections** — the primary content model. Each collection has its own directory and layout:
 
-| Directory | Layout | Content |
-|-----------|--------|---------|
-| `_thoughts/` | thoughts | Personal reflections |
-| `_movies/` | movie | Movie reviews with ratings |
-| `_playlists/` | playlists | Music playlists |
-| `_music/` | music | Album/artist entries |
-| `_code/` | code | Code articles and project write-ups |
-| `_books/` | books | Book reviews |
-| `_wiki/` | wiki | Knowledge base articles |
-| `_recipes/` | recipes | Recipes |
-| `resume/` | resume | Resume content |
+| Directory | Layout | Key frontmatter |
+|-----------|--------|-----------------|
+| `_thoughts/` | `thought` | `title`, `time` (display date e.g. "Apr. 2022"), `date` |
+| `_movies/` | `movie-item` | `title`, `rating` (e.g. "7/10") |
+| `_playlists/` | `playlist` | `title`, `story` |
+| `_music/` | `music-item` | `title` |
+| `_code/` | `code-item` | `title`, `date` |
+| `_books/` | `book-item` | `title`, `author`, `date` |
+| `_wiki/` | `wiki` | `title` |
+| `_recipes/` | `recipe-item` | `title`, `time`, `servings`, `tags`, `equipment`, `ingredients` |
+| `_tv/` | `tv-item` | `title`, `rating` (e.g. "★★★★"), `date` |
+| `_boardgames/` | `boardgame-item` | `title` |
+| `resume/` | `resume` | — |
 
-Collections are declared in `_config.yml` with `output: true` and an assigned default layout so collection files don't need to specify a layout in frontmatter.
+Collections are declared in `_config.yml` with `output: true` and an assigned default layout so collection files don't need to specify a layout in frontmatter. **Restart `jekyll serve` after editing `_config.yml`** — it is not hot-reloaded.
 
 **Layouts** live in `_layouts/`. Most pages extend `default.html`. The homepage (`index.html`) uses `home.html` which includes a background image. Each collection type has its own layout file that structures how posts are displayed.
 
@@ -40,4 +42,6 @@ Collections are declared in `_config.yml` with `output: true` and an assigned de
 
 **JavaScript** is minimal — jQuery is loaded via `_includes/jquery.html`.
 
-**Content format**: Markdown files with YAML frontmatter. Common frontmatter fields vary by collection (e.g., `rating` for movies, `time` for thoughts).
+**Content format**: Markdown files with YAML frontmatter. Fields vary by collection; see the table above. Each collection also has a corresponding index page under a matching top-level directory (e.g. `movies/index.html`, `wiki/index.html`) that lists all items in that collection.
+
+**Utility scripts**: `fetch_playlist_covers.rb` — fetches cover art for playlists from Spotify.

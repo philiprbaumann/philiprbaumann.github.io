@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="box content collection-index">
-  <h1 class="navy">Thoughts</h1>
+  <h1 class="navy">/thoughts</h1>
   <hr>
   <ul class="entry-list">
     {% assign sorted = site.thoughts | where_exp:"t","t.view == true" | sort: 'date' | reverse %}

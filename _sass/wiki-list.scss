@@ -1,27 +1,26 @@
 .wiki-ul {
-	padding-right: 40px;
-	height: 100%;
 	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	padding-bottom: 3vh;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 280px);
+	justify-content: center;
+	gap: 24px;
+	padding: 16px 0 3vh;
 	.wiki-li {
-		width: 300px;
-		margin: 20px;
+		width: 280px;
+		margin: 0;
 		font-family: contentlight;
 		color: $color-navy;
 		position: relative;
 		cursor: pointer;
-		transition: 0.3s; 
+		transition: 0.15s;
 		&.active, &:hover {
-			transition: 0.3s;
+			transition: 0.15s;
 			.content {
-				background-color: #fff8e4; 
+				background-color: #fff8e4;
 			}
 			&:before {
 				transform: scaleX(1.10) scaleY(1.10);
-				transition: 0.3s;
+				transition: 0.15s;
 			}
 		}
 		&:before {
@@ -35,7 +34,7 @@
 			border-radius: 15px;
 			z-index: 1;
 			transform: scaleX(0.85) scaleY(0.85);
-			transition: 0.3s;
+			transition: 0.15s;
 		}
 		.content {
 			flex: 1;
@@ -73,11 +72,19 @@
 
 @media (max-width: 768px) {
 	.wiki-ul {
-		padding-right: 0;
+		grid-template-columns: 1fr;
+		padding: 8px 0 3vh;
 	}
 
 	.wiki-ul .wiki-li {
 		width: 100%;
-		margin: 12px 0;
+	}
+
+	.wiki-ul .wiki-li .content {
+		height: auto;
+		min-height: 120px;
+		padding: 20px;
+		grid-template-columns: auto 1fr;
+		gap: 16px;
 	}
 }
